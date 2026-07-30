@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "a_world_reimagined:block/cedar_door_bottom",
+    "top": "a_world_reimagined:block/cedar_door_top"
+  }
+}

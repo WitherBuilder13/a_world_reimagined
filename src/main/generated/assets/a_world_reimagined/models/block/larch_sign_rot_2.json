@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_2",
+  "textures": {
+    "all": "a_world_reimagined:block/larch_sign",
+    "particle": "a_world_reimagined:block/larch_planks"
+  }
+}

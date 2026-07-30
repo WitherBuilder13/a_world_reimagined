@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_sign",
+  "textures": {
+    "all": "a_world_reimagined:block/hemlock_sign",
+    "particle": "a_world_reimagined:block/hemlock_planks"
+  }
+}

@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "a_world_reimagined",
+	"version": "${version}",
+	"name": "A World Reimagined",
+	"description": "An expansion of Minecraft's cold & snowy biomes",
+	"authors": [
+		"WitherBuilder13"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/a_world_reimagined/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.witherbuilder13.a_world_reimagined.AWorldReimagined"
+		],
+		"client": [
+			"me.witherbuilder13.a_world_reimagined.client.AWRClient"
+		],
+		"fabric-datagen": [
+			"me.witherbuilder13.a_world_reimagined.client.AWRDataGenerator"
+		]
+	},
+	"mixins": [
+      "a_world_reimagined.mixins.json",
+		{
+			"config": "a_world_reimagined.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.3-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "a_world_reimagined:block/hemlock_slab"
+    },
+    "type=double": {
+      "model": "a_world_reimagined:block/hemlock_planks"
+    },
+    "type=top": {
+      "model": "a_world_reimagined:block/hemlock_slab_top"
+    }
+  }
+}

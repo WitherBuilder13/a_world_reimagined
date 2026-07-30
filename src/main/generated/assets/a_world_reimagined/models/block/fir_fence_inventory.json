@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "a_world_reimagined:block/fir_planks"
+  }
+}

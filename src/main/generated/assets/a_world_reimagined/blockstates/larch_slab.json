@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "a_world_reimagined:block/larch_slab"
+    },
+    "type=double": {
+      "model": "a_world_reimagined:block/larch_planks"
+    },
+    "type=top": {
+      "model": "a_world_reimagined:block/larch_slab_top"
+    }
+  }
+}

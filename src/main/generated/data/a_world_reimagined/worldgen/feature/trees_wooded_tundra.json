@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:weighted_random_selector",
+  "features": [
+    {
+      "data": "a_world_reimagined:larch",
+      "weight": 1
+    },
+    {
+      "data": "a_world_reimagined:larch_fancy",
+      "weight": 1
+    },
+    {
+      "data": "a_world_reimagined:fallen_larch",
+      "weight": 1
+    }
+  ]
+}
