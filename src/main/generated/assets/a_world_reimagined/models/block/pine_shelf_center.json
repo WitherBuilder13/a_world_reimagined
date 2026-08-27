@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_shelf_center",
-  "textures": {
-    "all": "a_world_reimagined:block/pine_shelf",
-    "particle": "a_world_reimagined:block/stripped_pine_log"
-  }
-}

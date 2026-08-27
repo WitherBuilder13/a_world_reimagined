@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_shelf_unconnected",
-  "textures": {
-    "all": "a_world_reimagined:block/cedar_shelf",
-    "particle": "a_world_reimagined:block/stripped_cedar_log"
-  }
-}

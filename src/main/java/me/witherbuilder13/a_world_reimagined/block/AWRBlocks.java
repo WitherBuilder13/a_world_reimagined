@@ -1,3 +1,4 @@
+/*
 package me.witherbuilder13.a_world_reimagined.block;
 
 import me.witherbuilder13.a_world_reimagined.block.util.AWRBlockFamilies;
@@ -6,12 +7,13 @@ import me.witherbuilder13.a_world_reimagined.block.util.AWRTreeGrowers;
 import me.witherbuilder13.a_world_reimagined.block.util.AWRWoodTypes;
 import me.witherbuilder13.a_world_reimagined.references.AWRBlockIds;
 import me.witherbuilder13.a_world_reimagined.references.AWRBlockItemIds;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
-import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -271,7 +273,7 @@ public class AWRBlocks {
     }
 
     private static Block leavesBlock(BlockItemId id) {
-        return register(id, p -> new LeavesBlock(AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS));
+        return register(id, p -> new TintedParticleLeavesBlock(1.0F, p), Blocks.leavesProperties(SoundType.GRASS));
     }
     
     private static Block saplingBlock(BlockItemId id, TreeGrower treeGrower) {
@@ -320,3 +322,4 @@ public class AWRBlocks {
         AWRBlockSetTypes.init();
     }
 }
+*/

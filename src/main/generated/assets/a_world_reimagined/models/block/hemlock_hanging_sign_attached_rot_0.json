@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_attached_hanging_sign_rot_0",
-  "textures": {
-    "all": "a_world_reimagined:block/hemlock_hanging_sign",
-    "particle": "a_world_reimagined:block/stripped_hemlock_log"
-  }
-}

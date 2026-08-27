@@ -1,3 +1,4 @@
+/*
 package me.witherbuilder13.a_world_reimagined.item;
 
 import me.witherbuilder13.a_world_reimagined.block.AWRBlocks;
@@ -147,13 +148,15 @@ public class AWRItems {
     public static final Item REDWOOD_SHELF = registerBlock(AWRBlockItemIds.REDWOOD_SHELF, AWRBlocks.REDWOOD_SHELF);
     public static final Item SEQUOIA_SHELF = registerBlock(AWRBlockItemIds.SEQUOIA_SHELF, AWRBlocks.SEQUOIA_SHELF);
 
-    public static final Item CEDAR_LEAVES = registerBlock(AWRBlockItemIds.CEDAR_LEAVES, AWRBlocks.CEDAR_LEAVES);
+    */
+/*public static final Item CEDAR_LEAVES = registerBlock(AWRBlockItemIds.CEDAR_LEAVES, AWRBlocks.CEDAR_LEAVES);
     public static final Item FIR_LEAVES = registerBlock(AWRBlockItemIds.FIR_LEAVES, AWRBlocks.FIR_LEAVES);
     public static final Item HEMLOCK_LEAVES = registerBlock(AWRBlockItemIds.HEMLOCK_LEAVES, AWRBlocks.HEMLOCK_LEAVES);
     public static final Item LARCH_LEAVES = registerBlock(AWRBlockItemIds.LARCH_LEAVES, AWRBlocks.LARCH_LEAVES);
     public static final Item PINE_LEAVES = registerBlock(AWRBlockItemIds.PINE_LEAVES, AWRBlocks.PINE_LEAVES);
     public static final Item REDWOOD_LEAVES = registerBlock(AWRBlockItemIds.REDWOOD_LEAVES, AWRBlocks.REDWOOD_LEAVES);
-    public static final Item SEQUOIA_LEAVES = registerBlock(AWRBlockItemIds.SEQUOIA_LEAVES, AWRBlocks.SEQUOIA_LEAVES);
+    public static final Item SEQUOIA_LEAVES = registerBlock(AWRBlockItemIds.SEQUOIA_LEAVES, AWRBlocks.SEQUOIA_LEAVES);*//*
+
 
     public static final Item CEDAR_SAPLING = registerBlock(AWRBlockItemIds.CEDAR_SAPLING, AWRBlocks.CEDAR_SAPLING);
     public static final Item FIR_SAPLING = registerBlock(AWRBlockItemIds.FIR_SAPLING, AWRBlocks.FIR_SAPLING);
@@ -200,3 +203,4 @@ public class AWRItems {
 
     public static void init() {}
 }
+*/

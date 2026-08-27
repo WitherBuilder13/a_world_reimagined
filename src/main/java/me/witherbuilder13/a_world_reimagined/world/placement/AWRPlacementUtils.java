@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class AWRPlacementUtils {
 
     public static void bootstrap(final BootstrapContext<PlacedFeature> context) {
-        AWRTreePlacements.bootstrap(context);
+        //AWRTreePlacements.bootstrap(context);
         AWRVegetationPlacements.bootstrap(context);
     }
 

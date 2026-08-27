@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right",
-  "textures": {
-    "bottom": "a_world_reimagined:block/hemlock_door_bottom",
-    "top": "a_world_reimagined:block/hemlock_door_top"
-  }
-}

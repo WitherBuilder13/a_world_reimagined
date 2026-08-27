@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "a_world_reimagined:block/redwood_leaves"
-  }
-}

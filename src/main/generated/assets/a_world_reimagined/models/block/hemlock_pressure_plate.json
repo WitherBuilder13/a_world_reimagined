@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/pressure_plate_up",
-  "textures": {
-    "texture": "a_world_reimagined:block/hemlock_planks"
-  }
-}

@@ -1,3 +1,4 @@
+/*
 package me.witherbuilder13.a_world_reimagined.datagen;
 
 import com.google.common.collect.ImmutableMap;
@@ -81,11 +82,13 @@ public class ModelGen extends FabricModelProvider {
         for (Block block : blockFamilies.keySet())
             blockModelGenerators.family(block).generateFor(blockFamilies.get(block));
 
-        /*BlockFamilies.getAllFamilies()
+        */
+/*BlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .filter(blockFamily -> AWRBlockFamilies.BLOCK_FAMILIES.contains(blockFamily))
                 .forEach(blockFamily -> blockModelGenerators.family(blockFamily.getBaseBlock()).generateFor(blockFamily)
-        );*/
+        );*//*
+
 
         Map<Block, BlockFamily> specialFamilies = new HashMap<>();
 
@@ -129,3 +132,4 @@ public class ModelGen extends FabricModelProvider {
 
     }
 }
+*/

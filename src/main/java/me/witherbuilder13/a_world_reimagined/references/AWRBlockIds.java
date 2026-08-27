@@ -1,3 +1,4 @@
+/*
 package me.witherbuilder13.a_world_reimagined.references;
 
 import me.witherbuilder13.a_world_reimagined.AWorldReimagined;
@@ -38,3 +39,4 @@ public class AWRBlockIds {
         return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AWorldReimagined.MOD_ID, name));
     }
 }
+*/

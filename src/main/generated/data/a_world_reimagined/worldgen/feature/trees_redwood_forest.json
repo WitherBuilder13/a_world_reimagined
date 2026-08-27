@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:weighted_random_selector",
-  "features": [
-    {
-      "data": "a_world_reimagined:redwood",
-      "weight": 1
-    }
-  ]
-}

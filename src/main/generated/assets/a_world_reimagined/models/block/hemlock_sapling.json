@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "a_world_reimagined:block/hemlock_sapling"
-  }
-}
