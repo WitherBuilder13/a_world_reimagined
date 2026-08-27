@@ -15,6 +15,6 @@ public class AWRPlacementUtils {
     }
 
     public static ResourceKey<PlacedFeature> of(String id) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(AWorldReimagined.MOD_ID, id));
+        return ResourceKey.create(Registries.PLACED_FEATURE, AWorldReimagined.id(id));
     }
 }

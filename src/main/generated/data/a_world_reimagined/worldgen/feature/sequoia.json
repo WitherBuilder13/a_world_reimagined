@@ -1,66 +1,59 @@
 {
-  "type": "advanced_tree_config:advanced_tree",
-  "branch_groups": [
-    {
-      "branches": [
-        {
-          "branch_provider": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "a_world_reimagined:sequoia_log",
-              "Properties": {
-                "axis": "y"
-              }
-            }
-          },
-          "config": {
-            "branch_vector": {
-              "type": "advanced_tree_config:simple",
-              "length_y": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 36,
-                "min_inclusive": 24
-              }
-            },
-            "shape": "square_cut_corners",
-            "thickness_x": 4,
-            "thickness_z": 4
-          },
-          "end_node": 1,
-          "id": 1,
-          "start_node": 0
+  "type": "minecraft:tree",
+  "below_trunk_provider": {
+    "type": "minecraft:rule_based_state_provider",
+    "rules": [
+      {
+        "if_true": {
+          "type": "minecraft:not",
+          "predicate": {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:cannot_replace_below_tree_trunk"
+          }
+        },
+        "then": {
+          "type": "minecraft:simple_state_provider",
+          "state": "minecraft:dirt"
         }
-      ]
+      }
+    ]
+  },
+  "decorators": [],
+  "foliage_placer": {
+    "type": "minecraft:mega_pine_foliage_placer",
+    "crown_height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 24,
+      "min_inclusive": 20
     },
-    {
-      "branches": [
-        {
-          "branch_provider": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "a_world_reimagined:sequoia_log",
-              "Properties": {
-                "axis": "y"
-              }
-            }
-          },
-          "config": {
-            "branch_vector": {
-              "type": "advanced_tree_config:simple",
-              "length_y": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 16,
-                "min_inclusive": 8
-              }
-            },
-            "thickness_x": 2,
-            "thickness_z": 2
-          },
-          "end_node": 2,
-          "id": 2,
-          "start_node": 1
-        }
-      ]
+    "offset": 0,
+    "radius": 4
+  },
+  "foliage_provider": {
+    "type": "minecraft:simple_state_provider",
+    "state": "a_world_reimagined:sequoia_leaves"
+  },
+  "ignore_vines": false,
+  "minimum_size": {
+    "type": "minecraft:two_layers_feature_size",
+    "lower_size": 2,
+    "upper_size": 3
+  },
+  "trunk_placer": {
+    "type": "a_world_reimagined:extra_giant_trunk_placer",
+    "base_height": 32,
+    "cut_corners": true,
+    "diameter": 4,
+    "height_rand_a": 8,
+    "height_rand_b": 16,
+    "thin_height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 24,
+      "min_inclusive": 16
     }
-  ]
+  },
+  "trunk_provider": {
+    "type": "minecraft:simple_state_provider",
+    "state": "a_world_reimagined:sequoia_log"
+  }
 }

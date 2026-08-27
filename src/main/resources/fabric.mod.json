@@ -19,10 +19,10 @@
 			"me.witherbuilder13.a_world_reimagined.AWorldReimagined"
 		],
 		"client": [
-			"me.witherbuilder13.a_world_reimagined.client.AWRClient"
+			"me.witherbuilder13.a_world_reimagined.AWRClient"
 		],
 		"fabric-datagen": [
-			"me.witherbuilder13.a_world_reimagined.client.AWRDataGenerator"
+			"me.witherbuilder13.a_world_reimagined.datagen.AWRDataGenerator"
 		]
 	},
 	"mixins": [

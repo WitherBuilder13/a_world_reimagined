@@ -30,7 +30,7 @@ public class GiantTreeGrower {
     private final String name;
     private final WeightedList<ResourceKey<Feature>> redwoodTrees;
     private final WeightedList<ResourceKey<Feature>> sequoiaTrees;
-    private final @Nullable ResourceKey<Feature> shortestTree;
+    private final ResourceKey<Feature> shortestTree;
 
     public GiantTreeGrower(
             String name,

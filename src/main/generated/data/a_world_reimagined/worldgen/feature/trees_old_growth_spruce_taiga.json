@@ -2,15 +2,35 @@
   "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "data": "minecraft:mega_spruce_checked",
+      "data": "a_world_reimagined:spruce_mega",
       "weight": 4
     },
     {
-      "data": "minecraft:mega_pine_checked",
+      "data": "a_world_reimagined:spruce_mega_pinecones",
       "weight": 4
     },
     {
-      "data": "minecraft:spruce_checked",
+      "data": "a_world_reimagined:spruce_top_mega",
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:spruce_top_mega_pinecones",
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:spruce",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce_pinecones",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce_top",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce_top_pinecones",
       "weight": 2
     },
     {
@@ -18,7 +38,7 @@
       "weight": 2
     },
     {
-      "data": "minecraft:pine_checked",
+      "data": "a_world_reimagined:spruce_fancy_pinecones",
       "weight": 2
     },
     {
@@ -26,11 +46,23 @@
       "weight": 2
     },
     {
-      "data": "a_world_reimagined:pine_fancy",
+      "data": "a_world_reimagined:pine_pinecones",
       "weight": 2
     },
     {
       "data": "a_world_reimagined:pine_top",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:pine_top_pinecones",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:pine_fancy",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:pine_fancy_pinecones",
       "weight": 2
     },
     {

@@ -3,6 +3,7 @@ package me.witherbuilder13.a_world_reimagined.block.util;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class AWRBlockSetTypes {
+    public static final BlockSetType ASPEN = new BlockSetType("aspen");
     public static final BlockSetType CEDAR = new BlockSetType("cedar");
     public static final BlockSetType FIR = new BlockSetType("fir");
     public static final BlockSetType HEMLOCK = new BlockSetType("hemlock");

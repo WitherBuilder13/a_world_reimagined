@@ -1,11 +1,7 @@
 package me.witherbuilder13.a_world_reimagined.world.feature;
 
-import me.witherbuilder13.advanced_tree_config.feature.AdvancedTreeFeature;
-import me.witherbuilder13.advanced_tree_config.feature.util.Branch;
-import me.witherbuilder13.advanced_tree_config.feature.util.BranchShape;
-import me.witherbuilder13.advanced_tree_config.util.blockvector.SimpleBlockVector;
+import me.witherbuilder13.a_world_reimagined.world.feature.trunkplacer.ExtraGiantTrunkPlacer;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -29,6 +25,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePl
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLogsDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.PlaceOnGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
@@ -42,13 +39,17 @@ import static net.minecraft.world.level.block.Blocks.SPRUCE_LOG;
 
 public class AWRTreeFeatures {
     
+    public static final ResourceKey<Feature> ASPEN = AWRFeatureUtils.of("aspen");
+    
     public static final ResourceKey<Feature> CEDAR = AWRFeatureUtils.of("cedar");
     public static final ResourceKey<Feature> CEDAR_CANOPY = AWRFeatureUtils.of("cedar_canopy");
     public static final ResourceKey<Feature> CEDAR_FANCY = AWRFeatureUtils.of("cedar_fancy");
 
     public static final ResourceKey<Feature> FIR = AWRFeatureUtils.of("fir");
+    public static final ResourceKey<Feature> FIR_TOP = AWRFeatureUtils.of("fir_top");
     public static final ResourceKey<Feature> FIR_FANCY = AWRFeatureUtils.of("fir_fancy");
     public static final ResourceKey<Feature> FIR_MEGA = AWRFeatureUtils.of("fir_mega");
+    public static final ResourceKey<Feature> FIR_TOP_MEGA = AWRFeatureUtils.of("fir_top_mega");
 
     public static final ResourceKey<Feature> HEMLOCK = AWRFeatureUtils.of("hemlock");
     public static final ResourceKey<Feature> HEMLOCK_FANCY = AWRFeatureUtils.of("hemlock_fancy");
@@ -57,28 +58,63 @@ public class AWRTreeFeatures {
     public static final ResourceKey<Feature> LARCH_FANCY = AWRFeatureUtils.of("larch_fancy");
 
     public static final ResourceKey<Feature> PINE = AWRFeatureUtils.of("pine");
-    public static final ResourceKey<Feature> PINE_FANCY = AWRFeatureUtils.of("pine_fancy");
     public static final ResourceKey<Feature> PINE_TOP = AWRFeatureUtils.of("pine_top");
+    public static final ResourceKey<Feature> PINE_FANCY = AWRFeatureUtils.of("pine_fancy");
     public static final ResourceKey<Feature> PINE_MEGA = AWRFeatureUtils.of("pine_mega");
     public static final ResourceKey<Feature> PINE_TOP_MEGA = AWRFeatureUtils.of("pine_top_mega");
+    
+    public static final ResourceKey<Feature> PINE_PINECONES = AWRFeatureUtils.of("pine_pinecones");
+    public static final ResourceKey<Feature> PINE_TOP_PINECONES = AWRFeatureUtils.of("pine_top_pinecones");
+    public static final ResourceKey<Feature> PINE_FANCY_PINECONES = AWRFeatureUtils.of("pine_fancy_pinecones");
+    public static final ResourceKey<Feature> PINE_MEGA_PINECONES = AWRFeatureUtils.of("pine_mega_pinecones");
+    public static final ResourceKey<Feature> PINE_TOP_MEGA_PINECONES = AWRFeatureUtils.of("pine_top_mega_pinecones");
 
     public static final ResourceKey<Feature> REDWOOD = AWRFeatureUtils.of("redwood");
 
     public static final ResourceKey<Feature> SEQUOIA = AWRFeatureUtils.of("sequoia");
 
+    public static final ResourceKey<Feature> SPRUCE = AWRFeatureUtils.of("spruce");
+    public static final ResourceKey<Feature> SPRUCE_TOP = AWRFeatureUtils.of("spruce_top");
     public static final ResourceKey<Feature> SPRUCE_FANCY = AWRFeatureUtils.of("spruce_fancy");
+    public static final ResourceKey<Feature> SPRUCE_MEGA = AWRFeatureUtils.of("spruce_mega");
+    public static final ResourceKey<Feature> SPRUCE_TOP_MEGA = AWRFeatureUtils.of("spruce_top_mega");
+    
+    public static final ResourceKey<Feature> SPRUCE_PINECONES = AWRFeatureUtils.of("spruce_pinecones");
+    public static final ResourceKey<Feature> SPRUCE_TOP_PINECONES = AWRFeatureUtils.of("spruce_top_pinecones");
+    public static final ResourceKey<Feature> SPRUCE_FANCY_PINECONES = AWRFeatureUtils.of("spruce_fancy_pinecones");
+    public static final ResourceKey<Feature> SPRUCE_MEGA_PINECONES = AWRFeatureUtils.of("spruce_mega_pinecones");
+    public static final ResourceKey<Feature> SPRUCE_TOP_MEGA_PINECONES = AWRFeatureUtils.of("spruce_top_mega_pinecones");
 
 
     public static final ResourceKey<Feature> FALLEN_FIR = AWRFeatureUtils.of("fallen_fir");
     public static final ResourceKey<Feature> FALLEN_LARCH = AWRFeatureUtils.of("fallen_larch");
     public static final ResourceKey<Feature> FALLEN_PINE = AWRFeatureUtils.of("fallen_pine");
+    
+    //` ------------------------------------------------------------------------------------------------------------
 
     public static void bootstrap(BootstrapContext<Feature> context) {
 
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
         BlockStateProvider belowTrunkProvider = TreeFeature.defaultPlaceBelowTreeTrunkProvider(biomes);
+        
+        PlaceOnGroundDecorator sparsePinecones = new PlaceOnGroundDecorator(
+                96, 4, 2, new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 3))
+        );
+        PlaceOnGroundDecorator thickPinecones = new PlaceOnGroundDecorator(
+                150, 2, 2, new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 4))
+        );
 
+        context.register(
+                ASPEN,
+                conifer(
+                        true, ASPEN_LOG, ASPEN_LEAVES,
+                        7, 3, 1,
+                        ConstantInt.of(2), UniformInt.of(0, 1), UniformInt.of(1, 2),
+                        belowTrunkProvider
+                ).build()
+        );
+        
         context.register(
                 CEDAR,
                 conifer(
@@ -106,8 +142,17 @@ public class AWRTreeFeatures {
                 FIR,
                 conifer(
                         false, FIR_LOG, FIR_LEAVES,
-                        12, 7, 2,
-                        UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(4, 5),
+                        10, 2, 6,
+                        ConstantInt.of(2), UniformInt.of(0, 2), UniformInt.of(3, 7),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                FIR_TOP,
+                conifer(
+                        true, FIR_LOG, FIR_LEAVES,
+                        7, 2, 4,
+                        UniformInt.of(2, 3), UniformInt.of(0, 1), UniformInt.of(3, 4),
                         belowTrunkProvider
                 ).build()
         );
@@ -115,8 +160,8 @@ public class AWRTreeFeatures {
                 FIR_FANCY,
                 coniferFancy(
                         FIR_LOG, FIR_LEAVES,
-                        12, 7, 2,
-                        UniformInt.of(0, 1), UniformInt.of(0, 2), UniformInt.of(4, 6),
+                        15, 2, 5,
+                        UniformInt.of(1, 1), UniformInt.of(2, 4), UniformInt.of(9, 17),
                         belowTrunkProvider
                 ).build()
         );
@@ -124,8 +169,17 @@ public class AWRTreeFeatures {
                 FIR_MEGA,
                 megaConifer(
                         FIR_LOG, FIR_LEAVES,
-                        23, 6, 12,
-                        ConstantInt.of(0), ConstantInt.of(1), UniformInt.of(17, 24),
+                        26, 2, 13,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(18, 22),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                FIR_TOP_MEGA,
+                megaConifer(
+                        FIR_LOG, FIR_LEAVES,
+                        22, 2, 9,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(5, 9),
                         belowTrunkProvider
                 ).build()
         );
@@ -172,17 +226,8 @@ public class AWRTreeFeatures {
                 PINE,
                 conifer(
                         false, PINE_LOG, PINE_LEAVES,
-                        5, 2, 1,
-                        UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2),
-                        belowTrunkProvider
-                ).build()
-        );
-        context.register(
-                PINE_FANCY,
-                coniferFancy(
-                        PINE_LOG, PINE_LEAVES,
-                        5, 2, 1,
-                        UniformInt.of(0, 1), UniformInt.of(0, 2), UniformInt.of(3, 4),
+                        9, 2, 4,
+                        UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(3, 7),
                         belowTrunkProvider
                 ).build()
         );
@@ -190,8 +235,17 @@ public class AWRTreeFeatures {
                 PINE_TOP,
                 conifer(
                         true, PINE_LOG, PINE_LEAVES,
-                        5, 2, 1,
-                        UniformInt.of(1, 2), ConstantInt.of(1), UniformInt.of(3, 4),
+                        9, 2, 4,
+                        UniformInt.of(2, 3), UniformInt.of(0, 1), UniformInt.of(3, 4),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                PINE_FANCY,
+                coniferFancy(
+                        PINE_LOG, PINE_LEAVES,
+                        13, 2, 4,
+                        UniformInt.of(1, 2), UniformInt.of(2, 4), UniformInt.of(9, 15),
                         belowTrunkProvider
                 ).build()
         );
@@ -199,8 +253,8 @@ public class AWRTreeFeatures {
                 PINE_MEGA,
                 megaConifer(
                         PINE_LOG, PINE_LEAVES,
-                        13, 2, 14,
-                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(13, 17),
+                        25, 2, 12,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(17, 21),
                         belowTrunkProvider
                 ).build()
         );
@@ -208,28 +262,176 @@ public class AWRTreeFeatures {
                 PINE_TOP_MEGA,
                 megaConifer(
                         PINE_LOG, PINE_LEAVES,
-                        13, 2, 14,
-                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(3, 7),
+                        20, 2, 7,
+                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(5, 9),
+                        belowTrunkProvider
+                ).build()
+        );
+        
+        context.register(
+                PINE_PINECONES,
+                conifer(
+                        false, PINE_LOG, PINE_LEAVES,
+                        9, 2, 4,
+                        UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(3, 7),
+                        belowTrunkProvider
+                ).decorators(List.of(
+                        sparsePinecones, thickPinecones
+                )).build()
+        );
+        context.register(
+                PINE_TOP_PINECONES,
+                conifer(
+                        true, PINE_LOG, PINE_LEAVES,
+                        9, 2, 4,
+                        UniformInt.of(2, 3), UniformInt.of(0, 1), UniformInt.of(3, 4),
+                        belowTrunkProvider
+                ).decorators(List.of(
+                        sparsePinecones, thickPinecones
+                )).build()
+        );
+        context.register(
+                PINE_FANCY_PINECONES,
+                coniferFancy(
+                        PINE_LOG, PINE_LEAVES,
+                        13, 2, 4,
+                        UniformInt.of(1, 2), UniformInt.of(2, 4), UniformInt.of(9, 15),
+                        belowTrunkProvider
+                ).decorators(List.of(
+                        sparsePinecones, thickPinecones
+                )).build()
+        );
+        context.register(
+                PINE_MEGA_PINECONES,
+                megaConifer(
+                        PINE_LOG, PINE_LEAVES,
+                        25, 2, 12,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(17, 21),
+                        belowTrunkProvider
+                ).decorators(List.of(
+                        sparsePinecones, thickPinecones
+                )).build()
+        );
+        context.register(
+                PINE_TOP_MEGA_PINECONES,
+                megaConifer(
+                        PINE_LOG, PINE_LEAVES,
+                        20, 2, 7,
+                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(5, 9),
+                        belowTrunkProvider
+                ).decorators(List.of(
+                        sparsePinecones, thickPinecones
+                )).build()
+        );
+
+        context.register(
+                REDWOOD,
+                extraGiant(
+                        REDWOOD_LOG, REDWOOD_LEAVES,
+                        32, 16, 24,
+                        ConstantInt.of(3), UniformInt.of(24, 32), false,
                         belowTrunkProvider
                 ).build()
         );
 
         context.register(
-                REDWOOD,
-                redwood()
+                SEQUOIA,
+                extraGiant(
+                        SEQUOIA_LOG, SEQUOIA_LEAVES,
+                        32, 8, 16,
+                        ConstantInt.of(4), UniformInt.of(16, 24), true,
+                        belowTrunkProvider
+                ).build()
         );
 
         context.register(
-                SEQUOIA,
-                sequoia()
+                SPRUCE,
+                conifer(
+                        false, SPRUCE_LOG, SPRUCE_LEAVES,
+                        9, 2, 5,
+                        ConstantInt.of(2), UniformInt.of(0, 2), UniformInt.of(3, 7),
+                        belowTrunkProvider
+                ).build()
         );
-
+        context.register(
+                SPRUCE_TOP,
+                conifer(
+                        true, SPRUCE_LOG, SPRUCE_LEAVES,
+                        7, 1, 3,
+                        UniformInt.of(2, 3), UniformInt.of(0, 1), UniformInt.of(3, 4),
+                        belowTrunkProvider
+                ).build()
+        );
         context.register(
                 SPRUCE_FANCY,
                 coniferFancy(
                         SPRUCE_LOG, SPRUCE_LEAVES,
-                        5, 2, 1,
-                        UniformInt.of(0, 1), UniformInt.of(0, 2), UniformInt.of(3, 4),
+                        15, 2, 5,
+                        ConstantInt.of(1), UniformInt.of(2, 4), UniformInt.of(9, 17),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_MEGA,
+                megaConifer(
+                        SPRUCE_LOG, SPRUCE_LEAVES,
+                        25, 2, 12,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(17, 21),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_TOP_MEGA,
+                megaConifer(
+                        SPRUCE_LOG, SPRUCE_LEAVES,
+                        21, 2, 8,
+                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(5, 9),
+                        belowTrunkProvider
+                ).build()
+        );
+        
+        context.register(
+                SPRUCE_PINECONES,
+                conifer(
+                        false, SPRUCE_LOG, SPRUCE_LEAVES,
+                        9, 2, 5,
+                        ConstantInt.of(2), UniformInt.of(0, 2), UniformInt.of(3, 7),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_TOP_PINECONES,
+                conifer(
+                        true, SPRUCE_LOG, SPRUCE_LEAVES,
+                        7, 1, 3,
+                        UniformInt.of(2, 3), UniformInt.of(0, 1), UniformInt.of(3, 4),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_FANCY_PINECONES,
+                coniferFancy(
+                        SPRUCE_LOG, SPRUCE_LEAVES,
+                        15, 2, 5,
+                        ConstantInt.of(1), UniformInt.of(2, 4), UniformInt.of(9, 17),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_MEGA_PINECONES,
+                megaConifer(
+                        SPRUCE_LOG, SPRUCE_LEAVES,
+                        25, 2, 12,
+                        ConstantInt.of(0), UniformInt.of(0, 2), UniformInt.of(17, 21),
+                        belowTrunkProvider
+                ).build()
+        );
+        context.register(
+                SPRUCE_TOP_MEGA_PINECONES,
+                megaConifer(
+                        SPRUCE_LOG, SPRUCE_LEAVES,
+                        21, 2, 8,
+                        ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(5, 9),
                         belowTrunkProvider
                 ).build()
         );
@@ -237,7 +439,7 @@ public class AWRTreeFeatures {
 
         context.register(
                 FALLEN_FIR,
-                fallenTree(FIR_LOG, 7, 11).logDecorator(
+                fallenTree(FIR_LOG, 5, 10).logDecorator(
                         basicMushrooms(0.1F, 1, 1)
                 ).build()
         );
@@ -314,7 +516,7 @@ public class AWRTreeFeatures {
                 new GiantTrunkPlacer(baseHeight, heightRandA, heightRandB),
                 BlockStateProvider.simple(leaves),
                 new MegaPineFoliagePlacer(radius, offset, crownHeight),
-                new TwoLayersFeatureSize(1, 0, 1),
+                new TwoLayersFeatureSize(1, 1, 2),
                 belowTrunkProvider
         );
     }
@@ -334,52 +536,25 @@ public class AWRTreeFeatures {
                 belowTrunkProvider
         );
     }
-
-    private static AdvancedTreeFeature redwood() {
-        return new AdvancedTreeFeature(
-                List.of(
-                        Branch.Group.create(
-                                new Branch(1, 0, 1, BlockStateProvider.simple(REDWOOD_LOG), Holder.direct(
-                                        Branch.Config.builder(SimpleBlockVector.of().lengthY(UniformInt.of(24, 36)))
-                                                .thicknessX(ConstantInt.of(3))
-                                                .thicknessZ(ConstantInt.of(3))
-                                                .build()
-                                ))
-                        ),
-                        Branch.Group.create(
-                                new Branch(2, 1, 2, BlockStateProvider.simple(REDWOOD_LOG), Holder.direct(
-                                        Branch.Config.builder(SimpleBlockVector.of().lengthY(UniformInt.of(16, 24)))
-                                                .thicknessX(ConstantInt.of(3))
-                                                .thicknessZ(ConstantInt.of(3))
-                                                .shape(BranchShape.SQUARE_CUT_CORNERS)
-                                                .build()
-                                ))
-                        )
-                )
-        );
-    }
-
-    private static AdvancedTreeFeature sequoia() {
-        return  new AdvancedTreeFeature(
-                List.of(
-                        Branch.Group.create(
-                                new Branch(1, 0, 1, BlockStateProvider.simple(SEQUOIA_LOG), Holder.direct(
-                                        Branch.Config.builder(SimpleBlockVector.of().lengthY(UniformInt.of(24, 36)))
-                                                .thicknessX(ConstantInt.of(4))
-                                                .thicknessZ(ConstantInt.of(4))
-                                                .shape(BranchShape.SQUARE_CUT_CORNERS)
-                                                .build()
-                                ))
-                        ),
-                        Branch.Group.create(
-                                new Branch(2, 1, 2, BlockStateProvider.simple(SEQUOIA_LOG), Holder.direct(
-                                        Branch.Config.builder(SimpleBlockVector.of().lengthY(UniformInt.of(8, 16)))
-                                                .thicknessX(ConstantInt.of(2))
-                                                .thicknessZ(ConstantInt.of(2))
-                                                .build()
-                                ))
-                        )
-                )
+    
+    private static TreeFeature.Builder extraGiant(
+            Block log,
+            Block leaves,
+            int baseHeight,
+            int heightRandA,
+            int heightRandB,
+            IntProvider diameter,
+            IntProvider thinHeight,
+            boolean cutCorners,
+            final BlockStateProvider belowTrunkProvider
+    ) {
+        return new TreeFeature.Builder(
+                BlockStateProvider.simple(log),
+                new ExtraGiantTrunkPlacer(baseHeight, heightRandA, heightRandB, diameter, thinHeight, cutCorners),
+                BlockStateProvider.simple(leaves),
+                new MegaPineFoliagePlacer(diameter, ConstantInt.of(0), UniformInt.of(20, 24)),
+                new TwoLayersFeatureSize(1, 2, 3),
+                belowTrunkProvider
         );
     }
 

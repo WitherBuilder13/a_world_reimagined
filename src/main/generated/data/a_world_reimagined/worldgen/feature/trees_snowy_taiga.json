@@ -3,22 +3,26 @@
   "features": [
     {
       "data": "a_world_reimagined:fir",
-      "weight": 2
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:fir_top",
+      "weight": 4
     },
     {
       "data": "a_world_reimagined:fir_fancy",
       "weight": 2
     },
     {
-      "data": "minecraft:spruce_checked",
-      "weight": 2
+      "data": "a_world_reimagined:spruce",
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:spruce_top",
+      "weight": 4
     },
     {
       "data": "a_world_reimagined:spruce_fancy",
-      "weight": 2
-    },
-    {
-      "data": "minecraft:pine_checked",
       "weight": 2
     },
     {

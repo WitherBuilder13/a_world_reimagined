@@ -13,9 +13,7 @@
         },
         "then": {
           "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "minecraft:dirt"
-          }
+          "state": "minecraft:dirt"
         }
       }
     ]
@@ -28,14 +26,7 @@
   },
   "foliage_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "a_world_reimagined:cedar_leaves",
-      "Properties": {
-        "distance": "7",
-        "persistent": "false",
-        "waterlogged": "false"
-      }
-    }
+    "state": "a_world_reimagined:cedar_leaves"
   },
   "ignore_vines": false,
   "minimum_size": {
@@ -49,11 +40,6 @@
   },
   "trunk_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "a_world_reimagined:cedar_log",
-      "Properties": {
-        "axis": "y"
-      }
-    }
+    "state": "a_world_reimagined:cedar_log"
   }
 }

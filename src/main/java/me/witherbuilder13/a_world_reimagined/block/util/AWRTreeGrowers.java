@@ -10,6 +10,15 @@ import java.util.function.Consumer;
 
 public class AWRTreeGrowers {
     
+    public static final TreeGrower ASPEN = new TreeGrower(
+            "aspen",
+            weightedList(b -> b
+                    .add(AWRTreeFeatures.ASPEN)
+            ),
+            WeightedList.of(),
+            WeightedList.of(),
+            AWRTreeFeatures.ASPEN
+    );
     public static final TreeGrower CEDAR = new TreeGrower(
             "cedar",
             weightedList(b -> b
@@ -25,9 +34,13 @@ public class AWRTreeGrowers {
             "fir",
             weightedList(b -> b
                     .add(AWRTreeFeatures.FIR)
+                    .add(AWRTreeFeatures.FIR_TOP)
                     .add(AWRTreeFeatures.FIR_FANCY)
             ),
-            WeightedList.of(),
+            weightedList(b -> b
+                    .add(AWRTreeFeatures.FIR_MEGA)
+                    .add(AWRTreeFeatures.FIR_TOP_MEGA)
+            ),
             WeightedList.of(),
             AWRTreeFeatures.FIR
     );
@@ -76,6 +89,20 @@ public class AWRTreeGrowers {
             WeightedList.of(),
             WeightedList.of(AWRTreeFeatures.SEQUOIA),
             AWRTreeFeatures.SEQUOIA
+    );
+    public static final TreeGrower SPRUCE = new TreeGrower(
+            "spruce",
+            weightedList(b -> b
+                    .add(AWRTreeFeatures.SPRUCE)
+                    .add(AWRTreeFeatures.SPRUCE_TOP)
+                    .add(AWRTreeFeatures.SPRUCE_FANCY)
+            ),
+            weightedList(b -> b
+                    .add(AWRTreeFeatures.SPRUCE_MEGA)
+                    .add(AWRTreeFeatures.SPRUCE_TOP_MEGA)
+            ),
+            WeightedList.of(),
+            AWRTreeFeatures.SPRUCE
     );
 
     private static WeightedList<ResourceKey<Feature>> weightedList(Consumer<WeightedList.Builder<ResourceKey<Feature>>> consumer) {

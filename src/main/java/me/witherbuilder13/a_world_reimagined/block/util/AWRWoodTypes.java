@@ -3,6 +3,7 @@ package me.witherbuilder13.a_world_reimagined.block.util;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class AWRWoodTypes {
+    public static final WoodType ASPEN = new WoodType("aspen", AWRBlockSetTypes.ASPEN);
     public static final WoodType CEDAR = new WoodType("cedar", AWRBlockSetTypes.CEDAR);
     public static final WoodType FIR = new WoodType("fir", AWRBlockSetTypes.FIR);
     public static final WoodType HEMLOCK = new WoodType("hemlock", AWRBlockSetTypes.HEMLOCK);

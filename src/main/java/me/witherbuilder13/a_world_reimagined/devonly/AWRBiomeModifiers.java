@@ -1,4 +1,4 @@
-package me.witherbuilder13.a_world_reimagined.world.biome;
+package me.witherbuilder13.a_world_reimagined.devonly;
 
 import me.witherbuilder13.a_world_reimagined.AWorldReimagined;
 import me.witherbuilder13.a_world_reimagined.world.placement.AWRVegetationPlacements;
@@ -15,6 +15,7 @@ public class AWRBiomeModifiers {
     public static final Identifier REPLACE_GROVE_TREES = AWorldReimagined.id("replace_grove_trees");
     public static final Identifier REPLACE_OLD_GROWTH_PINE_TAIGA_TREES = AWorldReimagined.id("replace_old_growth_pine_taiga_trees");
     public static final Identifier REPLACE_OLD_GROWTH_SPRUCE_TAIGA_TREES = AWorldReimagined.id("replace_old_growth_spruce_taiga_trees");
+    public static final Identifier REPLACE_SNOWY_PLAINS_TREES = AWorldReimagined.id("replace_snowy_plains_trees");
     public static final Identifier REPLACE_SNOWY_TAIGA_TREES = AWorldReimagined.id("replace_snowy_taiga_trees");
     public static final Identifier REPLACE_TAIGA_TREES = AWorldReimagined.id("replace_taiga_trees");
 
@@ -22,6 +23,7 @@ public class AWRBiomeModifiers {
         BiomeModification groveTrees = BiomeModifications.create(REPLACE_GROVE_TREES);
         BiomeModification oldGrowthPineTaigaTrees = BiomeModifications.create(REPLACE_OLD_GROWTH_PINE_TAIGA_TREES);
         BiomeModification oldGrowthSpruceTaigaTrees = BiomeModifications.create(REPLACE_OLD_GROWTH_SPRUCE_TAIGA_TREES);
+        BiomeModification snowyPlainsTrees = BiomeModifications.create(REPLACE_SNOWY_PLAINS_TREES);
         BiomeModification snowyTaigaTrees = BiomeModifications.create(REPLACE_SNOWY_TAIGA_TREES);
         BiomeModification taigaTrees = BiomeModifications.create(REPLACE_TAIGA_TREES);
 
@@ -63,6 +65,19 @@ public class AWRBiomeModifiers {
                 BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_SPRUCE_TAIGA),
                 context ->
                         context.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA)
+        );
+        
+        snowyPlainsTrees.add(
+                ModificationPhase.REPLACEMENTS,
+                BiomeSelectors.includeByKey(Biomes.SNOWY_PLAINS),
+                context ->
+                        context.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SNOWY)
+        );
+        snowyPlainsTrees.add(
+                ModificationPhase.REPLACEMENTS,
+                BiomeSelectors.includeByKey(Biomes.SNOWY_PLAINS),
+                context ->
+                        context.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.TREES_SNOWY_PLAINS)
         );
 
         snowyTaigaTrees.add(

@@ -13,9 +13,7 @@
         },
         "then": {
           "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "minecraft:dirt"
-          }
+          "state": "minecraft:dirt"
         }
       }
     ]
@@ -35,20 +33,13 @@
     },
     "trunk_height": {
       "type": "minecraft:uniform",
-      "max_inclusive": 2,
-      "min_inclusive": 1
+      "max_inclusive": 7,
+      "min_inclusive": 3
     }
   },
   "foliage_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "a_world_reimagined:pine_leaves",
-      "Properties": {
-        "distance": "7",
-        "persistent": "false",
-        "waterlogged": "false"
-      }
-    }
+    "state": "a_world_reimagined:pine_leaves"
   },
   "ignore_vines": false,
   "minimum_size": {
@@ -56,17 +47,12 @@
   },
   "trunk_placer": {
     "type": "minecraft:straight_trunk_placer",
-    "base_height": 5,
+    "base_height": 9,
     "height_rand_a": 2,
-    "height_rand_b": 1
+    "height_rand_b": 4
   },
   "trunk_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "a_world_reimagined:pine_log",
-      "Properties": {
-        "axis": "y"
-      }
-    }
+    "state": "a_world_reimagined:pine_log"
   }
 }
