@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_3",
+  "textures": {
+    "all": "a_world_reimagined:block/fir_sign",
+    "particle": "a_world_reimagined:block/fir_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "a_world_reimagined:packed_ice_bricks",
+  "result": {
+    "id": "a_world_reimagined:packed_ice_brick_stairs"
+  }
+}

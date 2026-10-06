@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "a_world_reimagined:block/cattail_bottom"
+    },
+    "half=upper": {
+      "model": "a_world_reimagined:block/cattail_top"
+    }
+  }
+}

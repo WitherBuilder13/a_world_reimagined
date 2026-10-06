@@ -16,8 +16,8 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.OverworldBiomeBuilder;
-import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.NoiseRouterData;
+import net.minecraft.world.level.levelgen.densityfunction.DensityFunction;
 
 import java.util.List;
 
@@ -33,6 +33,20 @@ public class AWRBiomeInjectors {
 	public static final ResourceKey<BiomeInjector> BOG = createKey("bog");
 	
 	public static final ResourceKey<BiomeInjector> CHERRY_GROVE = createKey("cherry_grove");
+	
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_1 = createKey("dappled_forest_f_1");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_2 = createKey("dappled_forest_f_2");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_3 = createKey("dappled_forest_f_3");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_4 = createKey("dappled_forest_f_4");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_5 = createKey("dappled_forest_f_5");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_6 = createKey("dappled_forest_f_6");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_7 = createKey("dappled_forest_f_7");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_8 = createKey("dappled_forest_f_8");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_9 = createKey("dappled_forest_f_9");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_10 = createKey("dappled_forest_f_10");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_11 = createKey("dappled_forest_f_11");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_F_12 = createKey("dappled_forest_f_12");
+	public static final ResourceKey<BiomeInjector> DAPPLED_FOREST_P = createKey("dappled_forest_p");
 	
 	public static final ResourceKey<BiomeInjector> DEEP_WARM_OCEAN = createKey("deep_warm_ocean");
 	
@@ -180,6 +194,39 @@ public class AWRBiomeInjectors {
 				)
 		);
 		
+		List<ResourceKey<BiomeInjector>> dappledForestF = List.of(
+				DAPPLED_FOREST_F_1, DAPPLED_FOREST_F_2, DAPPLED_FOREST_F_3, DAPPLED_FOREST_F_4, DAPPLED_FOREST_F_5, DAPPLED_FOREST_F_6,
+				DAPPLED_FOREST_F_7, DAPPLED_FOREST_F_8, DAPPLED_FOREST_F_9, DAPPLED_FOREST_F_10, DAPPLED_FOREST_F_11, DAPPLED_FOREST_F_12
+		);
+		
+		for (int i = 0; i < 12; i++) {
+			context.register(dappledForestF.get(i), BiomeInjector.builder(Level.OVERWORLD)
+					.priority(1100)
+					.replacePartially(
+							HolderSet.direct(
+									biomes.getOrThrow(Biomes.FOREST)
+							),
+							biomes.getOrThrow(Biomes.DAPPLED_FOREST),
+							middleBiomeTopography(allParameters, ridgesFolded, i)
+									.climateRange(BiomeInjector.ClimateParameter.TEMPERATURE, min(temperature[1]), max(temperature[1]))
+									.climateRange(BiomeInjector.ClimateParameter.HUMIDITY, min(humidity[2]), max(humidity[2]))
+					)
+			);
+		}
+		context.register(DAPPLED_FOREST_P, BiomeInjector.builder(Level.OVERWORLD)
+				.priority(1100)
+				.replacePartially(
+						HolderSet.direct(
+								biomes.getOrThrow(Biomes.PLAINS)
+						),
+						biomes.getOrThrow(Biomes.DAPPLED_FOREST),
+						ParameterBuilder.create()
+								.climateRange(BiomeInjector.ClimateParameter.TEMPERATURE, min(temperature[1]), max(temperature[1]))
+								.climateRange(BiomeInjector.ClimateParameter.HUMIDITY, min(humidity[1]), max(humidity[1]))
+								.climateRange(BiomeInjector.ClimateParameter.WEIRDNESS, min(w_positive), max(w_positive))
+				)
+		);
+		
 		context.register(DEEP_WARM_OCEAN, BiomeInjector.builder(Level.OVERWORLD)
 				.replacePartially(
 						HolderSet.direct(
@@ -285,8 +332,8 @@ public class AWRBiomeInjectors {
 		context.register(PRAIRIE_1, BiomeInjector.builder(Level.OVERWORLD)
 				.replacePartially(
 						HolderSet.direct(
-								biomes.getOrThrow(Biomes.PLAINS)
-								//!biomes.getOrThrow(Biomes.DAPPLED_FOREST)
+								biomes.getOrThrow(Biomes.PLAINS),
+								biomes.getOrThrow(Biomes.DAPPLED_FOREST)
 						),
 						biomes.getOrThrow(AWRBiomes.PRAIRIE),
 						ParameterBuilder.create()
@@ -407,11 +454,11 @@ public class AWRBiomeInjectors {
 		return ResourceKey.create(LithostitchedRegistries.BIOME_INJECTOR, AWorldReimagined.id(id));
 	}
 	
-	private static double min(Climate.Parameter parameter) {
+	private static float min(Climate.Parameter parameter) {
 		return Climate.unquantizeCoord(parameter.min());
 	}
 	
-	private static double max(Climate.Parameter parameter) {
+	private static float max(Climate.Parameter parameter) {
 		return Climate.unquantizeCoord(parameter.max());
 	}
 	

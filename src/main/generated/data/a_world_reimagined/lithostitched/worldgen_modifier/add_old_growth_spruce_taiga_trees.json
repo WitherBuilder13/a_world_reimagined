@@ -1,0 +1,6 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "minecraft:old_growth_spruce_taiga",
+  "features": "a_world_reimagined:trees_old_growth_spruce_taiga",
+  "step": "vegetal_decoration"
+}

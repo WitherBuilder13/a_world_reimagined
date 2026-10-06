@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_inventory",
+  "textures": {
+    "all": "a_world_reimagined:block/larch_shelf",
+    "particle": "a_world_reimagined:block/stripped_larch_log"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "minecraft:old_growth_pine_taiga",
+  "features": "minecraft:trees_old_growth_pine_taiga",
+  "priority": 1000,
+  "step": "vegetal_decoration"
+}

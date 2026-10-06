@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_right",
+  "textures": {
+    "all": "a_world_reimagined:block/aspen_shelf",
+    "particle": "a_world_reimagined:block/stripped_aspen_log"
+  }
+}

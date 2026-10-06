@@ -1,0 +1,15 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "humidity": [
+      -1.0,
+      -0.35
+    ]
+  },
+  "replacement": "a_world_reimagined:prairie",
+  "targets": [
+    "minecraft:plains",
+    "minecraft:dappled_forest"
+  ]
+}

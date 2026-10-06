@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "a_world_reimagined:smooth_white_sandstone"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "a_world_reimagined:smooth_white_sandstone_slab"
+  }
+}

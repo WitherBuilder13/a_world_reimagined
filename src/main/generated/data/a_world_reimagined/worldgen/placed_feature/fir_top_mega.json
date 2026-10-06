@@ -1,0 +1,12 @@
+{
+  "feature": "a_world_reimagined:fir_top_mega",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": "a_world_reimagined:fir_sapling"
+      }
+    }
+  ]
+}

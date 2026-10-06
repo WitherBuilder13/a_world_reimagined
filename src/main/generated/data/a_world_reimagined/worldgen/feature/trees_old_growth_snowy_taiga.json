@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:weighted_random_selector",
+  "features": [
+    {
+      "data": "a_world_reimagined:fir_mega",
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:fir_top_mega",
+      "weight": 4
+    },
+    {
+      "data": "a_world_reimagined:fir",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:fir_top",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:fir_fancy",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce_top",
+      "weight": 2
+    },
+    {
+      "data": "a_world_reimagined:spruce_fancy",
+      "weight": 2
+    },
+    {
+      "data": "minecraft:fallen_spruce_tree",
+      "weight": 1
+    },
+    {
+      "data": "a_world_reimagined:fallen_fir",
+      "weight": 1
+    }
+  ]
+}

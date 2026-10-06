@@ -1,0 +1,33 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      0.03,
+      1.0
+    ],
+    "erosion": [
+      -1.0,
+      -0.375
+    ],
+    "humidity": [
+      -0.35,
+      0.1
+    ],
+    "minecraft:overworld/ridges_folded": [
+      -2.0,
+      -0.1999
+    ],
+    "temperature": [
+      -0.45,
+      -0.15
+    ]
+  },
+  "replacement": "a_world_reimagined:forested_slopes",
+  "targets": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:meadow",
+    "minecraft:cherry_grove"
+  ]
+}

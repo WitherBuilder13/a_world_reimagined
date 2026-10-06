@@ -1,0 +1,16 @@
+// 26.3	-999999999-01-01T00:00:00	A World Reimagined/Tags for minecraft:worldgen/biome
+338c03d894b12bc1703c5f152010fc66d7a03ef7 data/c/tags/worldgen/biome/is_cold/overworld.json
+1cc892d5b22bb44cc17d0b61c1b79c55aac35d8b data/c/tags/worldgen/biome/is_deep_ocean.json
+1cc892d5b22bb44cc17d0b61c1b79c55aac35d8b data/c/tags/worldgen/biome/is_hot/overworld.json
+6c603dc478ef17e5a8c79fcf832af09fd644fa0e data/c/tags/worldgen/biome/is_mountain.json
+6c603dc478ef17e5a8c79fcf832af09fd644fa0e data/c/tags/worldgen/biome/is_mountain/slope.json
+9e17bdc21c8609409dc2d767d2b55183067c7c54 data/c/tags/worldgen/biome/is_old_growth.json
+2cfd8f5e3cead2d1860ff06b72b69f4a6a4aa7ba data/c/tags/worldgen/biome/is_plains.json
+009e3544edb544cf5d75a4caee0c0877ee8e223c data/c/tags/worldgen/biome/is_plateau.json
+10722d41c1fb49cad49c247eaaa611366b6ea7b5 data/c/tags/worldgen/biome/is_rare.json
+57c8ad7ec64abfb31b394436b272ec04c77c046a data/c/tags/worldgen/biome/is_snowy.json
+77ff7dd17716f4439f7e4015c916f744a764c8db data/c/tags/worldgen/biome/is_snowy_plains.json
+b5e12ce5f348412794b2653024b59e2f5d2571b9 data/c/tags/worldgen/biome/is_swamp.json
+d65a5e452ad42d3455213e2704b7d42e65e4d27a data/c/tags/worldgen/biome/is_taiga.json
+8803c76686d9d46ddb101324cf4a753671a09a2a data/c/tags/worldgen/biome/is_temperate/overworld.json
+9e17bdc21c8609409dc2d767d2b55183067c7c54 data/minecraft/tags/worldgen/biome/has_structure/trail_ruins.json

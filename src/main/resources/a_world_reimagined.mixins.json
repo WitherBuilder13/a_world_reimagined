@@ -1,12 +1,19 @@
 {
-	"required": true,
-	"package": "me.witherbuilder13.a_world_reimagined.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"mixins": [],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "me.witherbuilder13.a_world_reimagined.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "BlockTransformerMixin",
+    "CauldronDispatchAccessor",
+    "CauldronMixin",
+    "FallingBlockEntityMixin",
+    "MaterialRulesAccessor",
+    "TreeGrowerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }

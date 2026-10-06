@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    "a_world_reimagined:fir_planks"
+  ],
+  "result": {
+    "id": "a_world_reimagined:fir_button"
+  }
+}

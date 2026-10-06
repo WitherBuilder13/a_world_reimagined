@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "#a_world_reimagined:aspen_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:cedar_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:fir_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:hemlock_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:larch_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:pine_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "#a_world_reimagined:sequoia_logs",
+      "required": false
+    }
+  ]
+}

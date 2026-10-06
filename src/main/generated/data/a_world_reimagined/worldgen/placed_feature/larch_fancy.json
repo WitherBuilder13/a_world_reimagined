@@ -1,0 +1,12 @@
+{
+  "feature": "a_world_reimagined:larch_fancy",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": "a_world_reimagined:larch_sapling"
+      }
+    }
+  ]
+}

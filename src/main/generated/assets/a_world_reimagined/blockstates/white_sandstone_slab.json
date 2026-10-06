@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "a_world_reimagined:block/white_sandstone_slab"
+    },
+    "type=double": {
+      "model": "a_world_reimagined:block/white_sandstone"
+    },
+    "type=top": {
+      "model": "a_world_reimagined:block/white_sandstone_slab_top"
+    }
+  }
+}

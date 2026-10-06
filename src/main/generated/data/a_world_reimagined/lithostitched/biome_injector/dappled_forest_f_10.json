@@ -1,0 +1,29 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      -0.19,
+      1.0
+    ],
+    "erosion": [
+      0.45,
+      0.55
+    ],
+    "humidity": [
+      -0.1,
+      0.1
+    ],
+    "minecraft:overworld/ridges_folded": [
+      -0.85,
+      -0.1999
+    ],
+    "temperature": [
+      -0.45,
+      -0.15
+    ]
+  },
+  "priority": 1100,
+  "replacement": "minecraft:dappled_forest",
+  "targets": "minecraft:forest"
+}

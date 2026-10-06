@@ -1,0 +1,32 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      0.03,
+      1.0
+    ],
+    "erosion": [
+      -1.0,
+      -0.375
+    ],
+    "humidity": [
+      0.3,
+      1.0
+    ],
+    "minecraft:overworld/ridges_folded": [
+      -2.0,
+      -0.1999
+    ],
+    "weirdness": [
+      0.0,
+      2.0
+    ]
+  },
+  "priority": 500,
+  "replacement": "a_world_reimagined:giant_grove",
+  "targets": [
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:old_growth_pine_taiga"
+  ]
+}

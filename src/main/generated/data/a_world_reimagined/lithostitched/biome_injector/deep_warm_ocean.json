@@ -1,0 +1,12 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      -1.05,
+      -0.455
+    ]
+  },
+  "replacement": "a_world_reimagined:deep_warm_ocean",
+  "targets": "minecraft:warm_ocean"
+}

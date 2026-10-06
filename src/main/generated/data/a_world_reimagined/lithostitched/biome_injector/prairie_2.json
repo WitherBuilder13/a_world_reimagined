@@ -1,0 +1,20 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "humidity": [
+      -0.35,
+      -0.1
+    ],
+    "temperature": [
+      -0.45,
+      -0.15
+    ],
+    "weirdness": [
+      -2.0,
+      0.0
+    ]
+  },
+  "replacement": "a_world_reimagined:prairie",
+  "targets": "minecraft:plains"
+}

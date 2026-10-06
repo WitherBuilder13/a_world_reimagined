@@ -1,0 +1,19 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "humidity": [
+      -1.0,
+      -0.35
+    ],
+    "temperature": [
+      -0.45,
+      -0.15
+    ]
+  },
+  "replacement": "a_world_reimagined:steppe",
+  "targets": [
+    "minecraft:meadow",
+    "minecraft:cherry_grove"
+  ]
+}

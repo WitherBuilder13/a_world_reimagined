@@ -1,0 +1,31 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      0.03,
+      1.0
+    ],
+    "erosion": [
+      -0.375,
+      -0.2225
+    ],
+    "humidity": [
+      0.1,
+      0.3
+    ],
+    "minecraft:overworld/ridges_folded": [
+      0.1999,
+      2.0
+    ],
+    "temperature": [
+      -0.15,
+      0.2
+    ]
+  },
+  "replacement": "a_world_reimagined:aspen_grove",
+  "targets": [
+    "minecraft:birch_forest",
+    "minecraft:meadow"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:packed_ice",
+  "result": {
+    "id": "a_world_reimagined:packed_ice_brick_wall"
+  }
+}

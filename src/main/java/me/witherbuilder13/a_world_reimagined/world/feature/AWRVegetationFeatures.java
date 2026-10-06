@@ -1,0 +1,305 @@
+package me.witherbuilder13.a_world_reimagined.world.feature;
+
+import me.witherbuilder13.a_world_reimagined.block.AWRBlocks;
+import me.witherbuilder13.a_world_reimagined.world.placement.AWRTreePlacements;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.TreePlacements;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.random.WeightedList;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeafLitterBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
+import net.minecraft.world.level.levelgen.feature.WeightedRandomSelectorFeature;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+import java.util.function.Consumer;
+
+public class AWRVegetationFeatures {
+    
+    public static final ResourceKey<Feature> TREES_ASPEN_GROVE = AWRFeatureUtils.of("trees_aspen_grove");
+    public static final ResourceKey<Feature> TREES_FORESTED_SLOPES = AWRFeatureUtils.of("trees_forested_slopes");
+    public static final ResourceKey<Feature> TREES_GIANT_GROVE = AWRFeatureUtils.of("trees_giant_grove");
+    public static final ResourceKey<Feature> TREES_GROVE = AWRFeatureUtils.of("trees_grove");
+    public static final ResourceKey<Feature> TREES_OLD_GROWTH_PINE_TAIGA = AWRFeatureUtils.of("trees_old_growth_pine_taiga");
+    public static final ResourceKey<Feature> TREES_OLD_GROWTH_SNOWY_TAIGA = AWRFeatureUtils.of("trees_old_growth_snowy_taiga");
+    public static final ResourceKey<Feature> TREES_OLD_GROWTH_SPRUCE_TAIGA = AWRFeatureUtils.of("trees_old_growth_spruce_taiga");
+    public static final ResourceKey<Feature> TREES_REDWOOD_FOREST = AWRFeatureUtils.of("trees_redwood_forest");
+    public static final ResourceKey<Feature> TREES_ROCKY_GROVE = AWRFeatureUtils.of("trees_rocky_grove");
+    public static final ResourceKey<Feature> TREES_SNOWY_PLAINS = AWRFeatureUtils.of("trees_snowy_plains");
+    public static final ResourceKey<Feature> TREES_SNOWY_TAIGA = AWRFeatureUtils.of("trees_snowy_taiga");
+    public static final ResourceKey<Feature> TREES_TAIGA = AWRFeatureUtils.of("trees_taiga");
+    public static final ResourceKey<Feature> TREES_WOODED_TUNDRA = AWRFeatureUtils.of("trees_wooded_tundra");
+    
+    public static final ResourceKey<Feature> GRASS_PRAIRIE = AWRFeatureUtils.of("grass_prairie");
+    public static final ResourceKey<Feature> GRASS_SNOWY = AWRFeatureUtils.of("grass_snowy");
+    public static final ResourceKey<Feature> GRASS_TUNDRA = AWRFeatureUtils.of("grass_tundra");
+    
+    //` -----------------------------------------------------------------------------------------------------------------
+
+    public static void bootstrap(BootstrapContext<Feature> context) {
+        HolderGetter<PlacedFeature> placedFeatureLookup = context.lookup(Registries.PLACED_FEATURE);
+        
+        Holder<PlacedFeature> aspen = placedFeatureLookup.getOrThrow(AWRTreePlacements.ASPEN);
+
+        Holder<PlacedFeature> cedar = placedFeatureLookup.getOrThrow(AWRTreePlacements.CEDAR);
+        Holder<PlacedFeature> cedarFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.CEDAR_FANCY);
+        Holder<PlacedFeature> cedarFlat = placedFeatureLookup.getOrThrow(AWRTreePlacements.CEDAR_FLAT);
+
+        Holder<PlacedFeature> fir = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR);
+        Holder<PlacedFeature> firTop = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_TOP);
+        Holder<PlacedFeature> firFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_FANCY);
+        Holder<PlacedFeature> firMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_MEGA);
+        Holder<PlacedFeature> firTopMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_TOP_MEGA);
+        
+        Holder<PlacedFeature> firOnSnow = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_ON_SNOW);
+        Holder<PlacedFeature> firFancyOnSnow = placedFeatureLookup.getOrThrow(AWRTreePlacements.FIR_FANCY_ON_SNOW);
+
+        Holder<PlacedFeature> hemlock = placedFeatureLookup.getOrThrow(AWRTreePlacements.HEMLOCK);
+        Holder<PlacedFeature> hemlockFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.HEMLOCK_FANCY);
+
+        Holder<PlacedFeature> larch = placedFeatureLookup.getOrThrow(AWRTreePlacements.LARCH);
+        Holder<PlacedFeature> larchFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.LARCH_FANCY);
+
+        Holder<PlacedFeature> pine = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE);
+        Holder<PlacedFeature> pineFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_FANCY);
+        Holder<PlacedFeature> pineTop = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_TOP);
+        Holder<PlacedFeature> pineMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_MEGA);
+        Holder<PlacedFeature> pineTopMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_TOP_MEGA);
+        
+        Holder<PlacedFeature> pinePinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_PINECONES);
+        Holder<PlacedFeature> pineTopPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_TOP_PINECONES);
+        Holder<PlacedFeature> pineFancyPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_FANCY_PINECONES);
+        Holder<PlacedFeature> pineMegaPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_MEGA_PINECONES);
+        Holder<PlacedFeature> pineTopMegaPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.PINE_TOP_MEGA_PINECONES);
+
+        Holder<PlacedFeature> redwood = placedFeatureLookup.getOrThrow(AWRTreePlacements.REDWOOD);
+
+        Holder<PlacedFeature> sequoia = placedFeatureLookup.getOrThrow(AWRTreePlacements.SEQUOIA);
+
+        Holder<PlacedFeature> spruce = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE);
+        Holder<PlacedFeature> spruceFancy = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_FANCY);
+        Holder<PlacedFeature> spruceTop = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_TOP);
+        Holder<PlacedFeature> spruceMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_MEGA);
+        Holder<PlacedFeature> spruceTopMega = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_TOP_MEGA);
+        
+        Holder<PlacedFeature> sprucePinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_PINECONES);
+        Holder<PlacedFeature> spruceTopPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_TOP_PINECONES);
+        Holder<PlacedFeature> spruceFancyPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_FANCY_PINECONES);
+        Holder<PlacedFeature> spruceMegaPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_MEGA_PINECONES);
+        Holder<PlacedFeature> spruceTopMegaPinecones = placedFeatureLookup.getOrThrow(AWRTreePlacements.SPRUCE_TOP_MEGA_PINECONES);
+
+        Holder<PlacedFeature> fallenFir = placedFeatureLookup.getOrThrow(AWRTreePlacements.FALLEN_FIR);
+        Holder<PlacedFeature> fallenLarch = placedFeatureLookup.getOrThrow(AWRTreePlacements.FALLEN_LARCH);
+        Holder<PlacedFeature> fallenPine = placedFeatureLookup.getOrThrow(AWRTreePlacements.FALLEN_PINE);
+        Holder<PlacedFeature> fallenSpruce = placedFeatureLookup.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE);
+        
+        //* ---------------------------------------------------------------------------------------------------------------
+        
+        context.register(TREES_ASPEN_GROVE, weightedRandomSelector(b -> b
+                .add(aspen)));
+
+        context.register(TREES_FORESTED_SLOPES, weightedRandomSelector(b -> b
+                .add(cedar)
+                .add(cedarFancy)
+                .add(cedarFlat)
+        ));
+        context.register(TREES_GIANT_GROVE, weightedRandomSelector(b -> b
+                .add(sequoia)
+        ));
+        context.register(TREES_GROVE, weightedRandomSelector(b -> b
+                .add(firOnSnow)
+                .add(firFancyOnSnow)
+        ));
+        context.register(TREES_OLD_GROWTH_PINE_TAIGA, weightedRandomSelector(b -> b
+                .add(pineMega, 4)
+                .add(pineMegaPinecones, 4)
+                .add(pineTopMega, 4)
+                .add(pineTopMegaPinecones, 4)
+                .add(pine, 2)
+                .add(pinePinecones, 2)
+                .add(pineTop, 2)
+                .add(pineTopPinecones, 2)
+                .add(pineFancy, 2)
+                .add(pineFancyPinecones, 2)
+                .add(spruce, 2)
+                .add(sprucePinecones, 2)
+                .add(spruceTop, 2)
+                .add(spruceTopPinecones, 2)
+                .add(spruceFancy, 2)
+                .add(spruceFancyPinecones, 2)
+                .add(fallenSpruce)
+                .add(fallenPine)
+        ));
+        context.register(TREES_OLD_GROWTH_SNOWY_TAIGA, weightedRandomSelector(b -> b
+                .add(firMega, 4)
+                .add(firTopMega, 4)
+                .add(fir, 2)
+                .add(firTop, 2)
+                .add(firFancy, 2)
+                .add(spruce, 2)
+                .add(spruceTop, 2)
+                .add(spruceFancy, 2)
+                .add(fallenSpruce)
+                .add(fallenFir)
+        ));
+        context.register(TREES_OLD_GROWTH_SPRUCE_TAIGA, weightedRandomSelector(b -> b
+                .add(spruceMega, 4)
+                .add(spruceMegaPinecones, 4)
+                .add(spruceTopMega, 4)
+                .add(spruceTopMegaPinecones, 4)
+                .add(spruce, 2)
+                .add(sprucePinecones, 2)
+                .add(spruceTop, 2)
+                .add(spruceTopPinecones, 2)
+                .add(spruceFancy, 2)
+                .add(spruceFancyPinecones, 2)
+                .add(pine, 2)
+                .add(pinePinecones, 2)
+                .add(pineTop, 2)
+                .add(pineTopPinecones, 2)
+                .add(pineFancy, 2)
+                .add(pineFancyPinecones, 2)
+                .add(fallenSpruce)
+                .add(fallenPine)
+        ));
+        context.register(TREES_REDWOOD_FOREST, weightedRandomSelector(b -> b
+                .add(redwood)
+        ));
+        context.register(TREES_ROCKY_GROVE, weightedRandomSelector(b -> b
+                .add(hemlock)
+                .add(hemlockFancy)
+        ));
+        context.register(TREES_SNOWY_PLAINS, weightedRandomSelector(b -> b
+                .add(spruce, 2)
+                .add(spruceFancy)
+        ));
+        context.register(TREES_SNOWY_TAIGA, weightedRandomSelector(b -> b
+                .add(fir, 4)
+                .add(firTop, 4)
+                .add(firFancy, 2)
+                .add(spruce, 4)
+                .add(spruceTop, 4)
+                .add(spruceFancy, 2)
+                .add(fallenSpruce)
+                .add(fallenFir)
+        ));
+        context.register(TREES_TAIGA, weightedRandomSelector(b -> b
+                .add(spruce, 4)
+                .add(sprucePinecones, 4)
+                .add(spruceTop, 4)
+                .add(spruceTopPinecones, 4)
+                .add(spruceFancy, 2)
+                .add(spruceFancyPinecones, 2)
+                .add(pine, 4)
+                .add(pinePinecones, 4)
+                .add(pineTop, 4)
+                .add(pineTopPinecones, 4)
+                .add(pineFancy, 2)
+                .add(pineFancyPinecones, 2)
+                .add(fallenSpruce)
+                .add(fallenPine)
+        ));
+        context.register(TREES_WOODED_TUNDRA, weightedRandomSelector(b -> b
+                .add(larch)
+                .add(larchFancy)
+                .add(fallenLarch)
+        ));
+        
+        context.register(GRASS_PRAIRIE, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_PRAIRIE_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_PRAIRIE_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+        context.register(GRASS_SNOWY, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_FROSTED_GRASS.defaultBlockState()
+                                        )
+                                )
+                        ),
+                        4
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_FROSTED_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+        context.register(GRASS_TUNDRA, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_TUNDRA_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_TUNDRA_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+    }
+    
+    private static WeightedRandomSelectorFeature weightedRandomSelector(Consumer<WeightedList.Builder<Holder<PlacedFeature>>> consumer) {
+        WeightedList.Builder<Holder<PlacedFeature>> builder = new WeightedList.Builder<>();
+        consumer.accept(builder);
+
+        return new WeightedRandomSelectorFeature(builder.build());
+    }
+    
+    public static WeightedList.Builder<BlockState> pineconesPatchBuilder(final int minState, final int maxState) {
+        return segmentedBlockPatchBuilder(AWRBlocks.PINECONES, minState, maxState, LeafLitterBlock.AMOUNT, LeafLitterBlock.FACING);
+    }
+    
+    private static WeightedList.Builder<BlockState> segmentedBlockPatchBuilder(
+            final Block block, final int minState, final int maxState, final IntegerProperty amountProperty, final EnumProperty<Direction> directionProperty
+    ) {
+        WeightedList.Builder<BlockState> segmentedBlockBuild = WeightedList.builder();
+        
+        for (int amount = minState; amount <= maxState; amount++) {
+            for (Direction direction : Direction.Plane.HORIZONTAL) {
+                segmentedBlockBuild.add(block.defaultBlockState().setValue(amountProperty, amount).setValue(directionProperty, direction), 1);
+            }
+        }
+        
+        return segmentedBlockBuild;
+    }
+}

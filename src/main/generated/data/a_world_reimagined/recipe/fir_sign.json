@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_sign",
+  "key": {
+    "#": "a_world_reimagined:fir_planks",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "###",
+    "###",
+    " X "
+  ],
+  "result": {
+    "count": 3,
+    "id": "a_world_reimagined:fir_sign"
+  }
+}

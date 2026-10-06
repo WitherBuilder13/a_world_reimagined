@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:weighted_random_selector",
+  "features": [
+    {
+      "data": "a_world_reimagined:hemlock",
+      "weight": 1
+    },
+    {
+      "data": "a_world_reimagined:hemlock_fancy",
+      "weight": 1
+    }
+  ]
+}

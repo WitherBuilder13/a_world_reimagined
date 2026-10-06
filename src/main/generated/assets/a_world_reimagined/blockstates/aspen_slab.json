@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "a_world_reimagined:block/aspen_slab"
+    },
+    "type=double": {
+      "model": "a_world_reimagined:block/aspen_planks"
+    },
+    "type=top": {
+      "model": "a_world_reimagined:block/aspen_slab_top"
+    }
+  }
+}

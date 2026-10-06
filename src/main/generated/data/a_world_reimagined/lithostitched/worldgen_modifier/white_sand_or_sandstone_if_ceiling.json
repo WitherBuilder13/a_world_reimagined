@@ -1,0 +1,33 @@
+{
+  "type": "lithostitched:set_material_rule",
+  "injection_type": "prepend",
+  "material_rule": {
+    "type": "minecraft:condition",
+    "if_true": "minecraft:not_under_deep_water",
+    "then_run": {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": "minecraft:snowy_beach"
+      },
+      "then_run": {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": "minecraft:on_ceiling",
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": "a_world_reimagined:white_sandstone"
+            }
+          },
+          {
+            "type": "minecraft:block",
+            "result_state": "a_world_reimagined:white_sand"
+          }
+        ]
+      }
+    }
+  },
+  "target_rules": "minecraft:overworld/surface"
+}

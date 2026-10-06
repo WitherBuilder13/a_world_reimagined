@@ -1,0 +1,6 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "minecraft:grove",
+  "features": "a_world_reimagined:trees_grove",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      0.3,
+      1.0
+    ],
+    "erosion": [
+      -0.2225,
+      0.05
+    ],
+    "humidity": [
+      0.3,
+      1.0
+    ],
+    "minecraft:overworld/ridges_folded": [
+      0.1999,
+      2.0
+    ]
+  },
+  "replacement": "a_world_reimagined:old_growth_snowy_taiga",
+  "targets": "minecraft:snowy_taiga"
+}

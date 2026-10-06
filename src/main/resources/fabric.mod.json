@@ -18,8 +18,11 @@
 		"main": [
 			"me.witherbuilder13.a_world_reimagined.AWorldReimagined"
 		],
+		"client": [
+			"me.witherbuilder13.a_world_reimagined.AWRClient"
+		],
 		"fabric-datagen": [
-			"me.witherbuilder13.a_world_reimagined.client.AWRDataGenerator"
+			"me.witherbuilder13.a_world_reimagined.datagen.AWRDataGenerator"
 		]
 	},
 	"mixins": [
@@ -30,9 +33,10 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.2-",
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3-",
 		"java": ">=25",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"lithostitched": ">=2.0.4"
 	}
 }

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "a_world_reimagined:white_sandstone",
+  "result": {
+    "id": "a_world_reimagined:cut_white_sandstone_slab"
+  }
+}

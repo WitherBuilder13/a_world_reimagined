@@ -1,0 +1,6 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "minecraft:snowy_taiga",
+  "features": "a_world_reimagined:trees_snowy_taiga",
+  "step": "vegetal_decoration"
+}

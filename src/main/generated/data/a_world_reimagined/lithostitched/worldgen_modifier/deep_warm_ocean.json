@@ -1,0 +1,17 @@
+{
+  "type": "lithostitched:set_material_rule",
+  "injection_type": "prepend",
+  "material_rule": {
+    "type": "minecraft:condition",
+    "if_true": "minecraft:not_under_deep_water",
+    "then_run": {
+      "type": "minecraft:condition",
+      "if_true": {
+        "type": "minecraft:biome",
+        "biome_is": "a_world_reimagined:deep_warm_ocean"
+      },
+      "then_run": "minecraft:overworld/sand_or_sandstone_if_ceiling"
+    }
+  },
+  "target_rules": "minecraft:overworld/surface"
+}

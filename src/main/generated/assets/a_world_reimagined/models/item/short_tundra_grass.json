@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "a_world_reimagined:block/short_tundra_grass"
+  }
+}

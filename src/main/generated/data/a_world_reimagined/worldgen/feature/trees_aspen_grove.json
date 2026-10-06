@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:weighted_random_selector",
+  "features": [
+    {
+      "data": "a_world_reimagined:aspen",
+      "weight": 1
+    }
+  ]
+}

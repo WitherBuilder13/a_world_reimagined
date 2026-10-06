@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "a_world_reimagined:block/snow_brick_slab"
+    },
+    "type=double": {
+      "model": "a_world_reimagined:block/snow_bricks"
+    },
+    "type=top": {
+      "model": "a_world_reimagined:block/snow_brick_slab_top"
+    }
+  }
+}

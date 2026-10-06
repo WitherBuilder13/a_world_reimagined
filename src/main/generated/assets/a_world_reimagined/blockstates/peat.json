@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "layers=1": {
+      "model": "a_world_reimagined:block/peat_height2"
+    },
+    "layers=2": {
+      "model": "a_world_reimagined:block/peat_height4"
+    },
+    "layers=3": {
+      "model": "a_world_reimagined:block/peat_height6"
+    },
+    "layers=4": {
+      "model": "a_world_reimagined:block/peat_height8"
+    },
+    "layers=5": {
+      "model": "a_world_reimagined:block/peat_height10"
+    },
+    "layers=6": {
+      "model": "a_world_reimagined:block/peat_height12"
+    },
+    "layers=7": {
+      "model": "a_world_reimagined:block/peat_height14"
+    },
+    "layers=8": {
+      "model": "a_world_reimagined:block/peat_block"
+    }
+  }
+}

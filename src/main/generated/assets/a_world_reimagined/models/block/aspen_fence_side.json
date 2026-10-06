@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "a_world_reimagined:block/aspen_planks"
+  }
+}

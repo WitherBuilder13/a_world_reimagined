@@ -1,4 +1,3 @@
-/*
 package me.witherbuilder13.a_world_reimagined.references;
 
 import me.witherbuilder13.a_world_reimagined.AWorldReimagined;
@@ -8,150 +7,540 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 
 public class AWRBlockItemIds {
+    
+    public static final BlockItemId ALDER_LOG = create("alder_log");
+    public static final BlockItemId ALDER_WOOD = create("alder_wood");
+    public static final BlockItemId STRIPPED_ALDER_LOG = create("stripped_alder_log");
+    public static final BlockItemId STRIPPED_ALDER_WOOD = create("stripped_alder_wood");
+    public static final BlockItemId ALDER_PLANKS = create("alder_planks");
+    public static final BlockItemId ALDER_STAIRS = create("alder_stairs");
+    public static final BlockItemId ALDER_SLAB = create("alder_slab");
+    public static final BlockItemId ALDER_FENCE = create("alder_fence");
+    public static final BlockItemId ALDER_FENCE_GATE = create("alder_fence_gate");
+    public static final BlockItemId ALDER_DOOR = create("alder_door");
+    public static final BlockItemId ALDER_TRAPDOOR = create("alder_trapdoor");
+    public static final BlockItemId ALDER_PRESSURE_PLATE = create("alder_pressure_plate");
+    public static final BlockItemId ALDER_BUTTON = create("alder_button");
+    public static final BlockItemId ALDER_SIGN = create("alder_sign");
+    public static final BlockItemId ALDER_HANGING_SIGN = create("alder_hanging_sign");
+    public static final BlockItemId ALDER_SHELF = create("alder_shelf");
+    public static final BlockItemId ALDER_LEAVES = create("alder_leaves");
+    public static final BlockItemId ALDER_SAPLING = create("alder_sapling");
+    
+    public static final BlockItemId APPLE_LOG = create("apple_log");
+    public static final BlockItemId APPLE_WOOD = create("apple_wood");
+    public static final BlockItemId STRIPPED_APPLE_LOG = create("stripped_apple_log");
+    public static final BlockItemId STRIPPED_APPLE_WOOD = create("stripped_apple_wood");
+    public static final BlockItemId APPLE_PLANKS = create("apple_planks");
+    public static final BlockItemId APPLE_STAIRS = create("apple_stairs");
+    public static final BlockItemId APPLE_SLAB = create("apple_slab");
+    public static final BlockItemId APPLE_FENCE = create("apple_fence");
+    public static final BlockItemId APPLE_FENCE_GATE = create("apple_fence_gate");
+    public static final BlockItemId APPLE_DOOR = create("apple_door");
+    public static final BlockItemId APPLE_TRAPDOOR = create("apple_trapdoor");
+    public static final BlockItemId APPLE_PRESSURE_PLATE = create("apple_pressure_plate");
+    public static final BlockItemId APPLE_BUTTON = create("apple_button");
+    public static final BlockItemId APPLE_SIGN = create("apple_sign");
+    public static final BlockItemId APPLE_HANGING_SIGN = create("apple_hanging_sign");
+    public static final BlockItemId APPLE_SHELF = create("apple_shelf");
+    public static final BlockItemId APPLE_LEAVES = create("apple_leaves");
+    public static final BlockItemId APPLE_SAPLING = create("apple_sapling");
 
+    public static final BlockItemId ASPEN_LOG = create("aspen_log");
+    public static final BlockItemId ASPEN_WOOD = create("aspen_wood");
+    public static final BlockItemId STRIPPED_ASPEN_LOG = create("stripped_aspen_log");
+    public static final BlockItemId STRIPPED_ASPEN_WOOD = create("stripped_aspen_wood");
+    public static final BlockItemId ASPEN_PLANKS = create("aspen_planks");
+    public static final BlockItemId ASPEN_STAIRS = create("aspen_stairs");
+    public static final BlockItemId ASPEN_SLAB = create("aspen_slab");
+    public static final BlockItemId ASPEN_FENCE = create("aspen_fence");
+    public static final BlockItemId ASPEN_FENCE_GATE = create("aspen_fence_gate");
+    public static final BlockItemId ASPEN_DOOR = create("aspen_door");
+    public static final BlockItemId ASPEN_TRAPDOOR = create("aspen_trapdoor");
+    public static final BlockItemId ASPEN_PRESSURE_PLATE = create("aspen_pressure_plate");
+    public static final BlockItemId ASPEN_BUTTON = create("aspen_button");
+    public static final BlockItemId ASPEN_SIGN = create("aspen_sign");
+    public static final BlockItemId ASPEN_HANGING_SIGN = create("aspen_hanging_sign");
+    public static final BlockItemId ASPEN_SHELF = create("aspen_shelf");
+    public static final BlockItemId ASPEN_LEAVES = create("aspen_leaves");
+    public static final BlockItemId ASPEN_SAPLING = create("aspen_sapling");
+    
+    public static final BlockItemId BAOBAB_LOG = create("baobab_log");
+    public static final BlockItemId BAOBAB_WOOD = create("baobab_wood");
+    public static final BlockItemId STRIPPED_BAOBAB_LOG = create("stripped_baobab_log");
+    public static final BlockItemId STRIPPED_BAOBAB_WOOD = create("stripped_baobab_wood");
+    public static final BlockItemId BAOBAB_PLANKS = create("baobab_planks");
+    public static final BlockItemId BAOBAB_STAIRS = create("baobab_stairs");
+    public static final BlockItemId BAOBAB_SLAB = create("baobab_slab");
+    public static final BlockItemId BAOBAB_FENCE = create("baobab_fence");
+    public static final BlockItemId BAOBAB_FENCE_GATE = create("baobab_fence_gate");
+    public static final BlockItemId BAOBAB_DOOR = create("baobab_door");
+    public static final BlockItemId BAOBAB_TRAPDOOR = create("baobab_trapdoor");
+    public static final BlockItemId BAOBAB_PRESSURE_PLATE = create("baobab_pressure_plate");
+    public static final BlockItemId BAOBAB_BUTTON = create("baobab_button");
+    public static final BlockItemId BAOBAB_SIGN = create("baobab_sign");
+    public static final BlockItemId BAOBAB_HANGING_SIGN = create("baobab_hanging_sign");
+    public static final BlockItemId BAOBAB_SHELF = create("baobab_shelf");
+    public static final BlockItemId BAOBAB_LEAVES = create("baobab_leaves");
+    public static final BlockItemId BAOBAB_SAPLING = create("baobab_sapling");
+
+    public static final BlockItemId BEECH_LOG = create("beech_log");
+    public static final BlockItemId BEECH_WOOD = create("beech_wood");
+    public static final BlockItemId STRIPPED_BEECH_LOG = create("stripped_beech_log");
+    public static final BlockItemId STRIPPED_BEECH_WOOD = create("stripped_beech_wood");
+    public static final BlockItemId BEECH_PLANKS = create("beech_planks");
+    public static final BlockItemId BEECH_STAIRS = create("beech_stairs");
+    public static final BlockItemId BEECH_SLAB = create("beech_slab");
+    public static final BlockItemId BEECH_FENCE = create("beech_fence");
+    public static final BlockItemId BEECH_FENCE_GATE = create("beech_fence_gate");
+    public static final BlockItemId BEECH_DOOR = create("beech_door");
+    public static final BlockItemId BEECH_TRAPDOOR = create("beech_trapdoor");
+    public static final BlockItemId BEECH_PRESSURE_PLATE = create("beech_pressure_plate");
+    public static final BlockItemId BEECH_BUTTON = create("beech_button");
+    public static final BlockItemId BEECH_SIGN = create("beech_sign");
+    public static final BlockItemId BEECH_HANGING_SIGN = create("beech_hanging_sign");
+    public static final BlockItemId BEECH_SHELF = create("beech_shelf");
+    public static final BlockItemId BEECH_LEAVES = create("beech_leaves");
+    public static final BlockItemId BEECH_SAPLING = create("beech_sapling");
+    
     public static final BlockItemId CEDAR_LOG = create("cedar_log");
-    public static final BlockItemId FIR_LOG = create("fir_log");
-    public static final BlockItemId HEMLOCK_LOG = create("hemlock_log");
-    public static final BlockItemId LARCH_LOG = create("larch_log");
-    public static final BlockItemId PINE_LOG = create("pine_log");
-    public static final BlockItemId REDWOOD_LOG = create("redwood_log");
-    public static final BlockItemId SEQUOIA_LOG = create("sequoia_log");
-    
     public static final BlockItemId CEDAR_WOOD = create("cedar_wood");
-    public static final BlockItemId FIR_WOOD = create("fir_wood");
-    public static final BlockItemId HEMLOCK_WOOD = create("hemlock_wood");
-    public static final BlockItemId LARCH_WOOD = create("larch_wood");
-    public static final BlockItemId PINE_WOOD = create("pine_wood");
-    public static final BlockItemId REDWOOD_WOOD = create("redwood_wood");
-    public static final BlockItemId SEQUOIA_WOOD = create("sequoia_wood");
-    
     public static final BlockItemId STRIPPED_CEDAR_LOG = create("stripped_cedar_log");
-    public static final BlockItemId STRIPPED_FIR_LOG = create("stripped_fir_log");
-    public static final BlockItemId STRIPPED_HEMLOCK_LOG = create("stripped_hemlock_log");
-    public static final BlockItemId STRIPPED_LARCH_LOG = create("stripped_larch_log");
-    public static final BlockItemId STRIPPED_PINE_LOG = create("stripped_pine_log");
-    public static final BlockItemId STRIPPED_REDWOOD_LOG = create("stripped_redwood_log");
-    public static final BlockItemId STRIPPED_SEQUOIA_LOG = create("stripped_sequoia_log");
-    
     public static final BlockItemId STRIPPED_CEDAR_WOOD = create("stripped_cedar_wood");
-    public static final BlockItemId STRIPPED_FIR_WOOD = create("stripped_fir_wood");
-    public static final BlockItemId STRIPPED_HEMLOCK_WOOD = create("stripped_hemlock_wood");
-    public static final BlockItemId STRIPPED_LARCH_WOOD = create("stripped_larch_wood");
-    public static final BlockItemId STRIPPED_PINE_WOOD = create("stripped_pine_wood");
-    public static final BlockItemId STRIPPED_REDWOOD_WOOD = create("stripped_redwood_wood");
-    public static final BlockItemId STRIPPED_SEQUOIA_WOOD = create("stripped_sequoia_wood");
-    
     public static final BlockItemId CEDAR_PLANKS = create("cedar_planks");
-    public static final BlockItemId FIR_PLANKS = create("fir_planks");
-    public static final BlockItemId HEMLOCK_PLANKS = create("hemlock_planks");
-    public static final BlockItemId LARCH_PLANKS = create("larch_planks");
-    public static final BlockItemId PINE_PLANKS = create("pine_planks");
-    public static final BlockItemId REDWOOD_PLANKS = create("redwood_planks");
-    public static final BlockItemId SEQUOIA_PLANKS = create("sequoia_planks");
-    
     public static final BlockItemId CEDAR_STAIRS = create("cedar_stairs");
-    public static final BlockItemId FIR_STAIRS = create("fir_stairs");
-    public static final BlockItemId HEMLOCK_STAIRS = create("hemlock_stairs");
-    public static final BlockItemId LARCH_STAIRS = create("larch_stairs");
-    public static final BlockItemId PINE_STAIRS = create("pine_stairs");
-    public static final BlockItemId REDWOOD_STAIRS = create("redwood_stairs");
-    public static final BlockItemId SEQUOIA_STAIRS = create("sequoia_stairs");
-    
     public static final BlockItemId CEDAR_SLAB = create("cedar_slab");
-    public static final BlockItemId FIR_SLAB = create("fir_slab");
-    public static final BlockItemId HEMLOCK_SLAB = create("hemlock_slab");
-    public static final BlockItemId LARCH_SLAB = create("larch_slab");
-    public static final BlockItemId PINE_SLAB = create("pine_slab");
-    public static final BlockItemId REDWOOD_SLAB = create("redwood_slab");
-    public static final BlockItemId SEQUOIA_SLAB = create("sequoia_slab");
-    
     public static final BlockItemId CEDAR_FENCE = create("cedar_fence");
-    public static final BlockItemId FIR_FENCE = create("fir_fence");
-    public static final BlockItemId HEMLOCK_FENCE = create("hemlock_fence");
-    public static final BlockItemId LARCH_FENCE = create("larch_fence");
-    public static final BlockItemId PINE_FENCE = create("pine_fence");
-    public static final BlockItemId REDWOOD_FENCE = create("redwood_fence");
-    public static final BlockItemId SEQUOIA_FENCE = create("sequoia_fence");
-    
     public static final BlockItemId CEDAR_FENCE_GATE = create("cedar_fence_gate");
-    public static final BlockItemId FIR_FENCE_GATE = create("fir_fence_gate");
-    public static final BlockItemId HEMLOCK_FENCE_GATE = create("hemlock_fence_gate");
-    public static final BlockItemId LARCH_FENCE_GATE = create("larch_fence_gate");
-    public static final BlockItemId PINE_FENCE_GATE = create("pine_fence_gate");
-    public static final BlockItemId REDWOOD_FENCE_GATE = create("redwood_fence_gate");
-    public static final BlockItemId SEQUOIA_FENCE_GATE = create("sequoia_fence_gate");
-    
     public static final BlockItemId CEDAR_DOOR = create("cedar_door");
-    public static final BlockItemId FIR_DOOR = create("fir_door");
-    public static final BlockItemId HEMLOCK_DOOR = create("hemlock_door");
-    public static final BlockItemId LARCH_DOOR = create("larch_door");
-    public static final BlockItemId PINE_DOOR = create("pine_door");
-    public static final BlockItemId REDWOOD_DOOR = create("redwood_door");
-    public static final BlockItemId SEQUOIA_DOOR = create("sequoia_door");
-    
     public static final BlockItemId CEDAR_TRAPDOOR = create("cedar_trapdoor");
-    public static final BlockItemId FIR_TRAPDOOR = create("fir_trapdoor");
-    public static final BlockItemId HEMLOCK_TRAPDOOR = create("hemlock_trapdoor");
-    public static final BlockItemId LARCH_TRAPDOOR = create("larch_trapdoor");
-    public static final BlockItemId PINE_TRAPDOOR = create("pine_trapdoor");
-    public static final BlockItemId REDWOOD_TRAPDOOR = create("redwood_trapdoor");
-    public static final BlockItemId SEQUOIA_TRAPDOOR = create("sequoia_trapdoor");
-    
-    public static final BlockItemId CEDAR_BUTTON = create("cedar_button");
-    public static final BlockItemId FIR_BUTTON = create("fir_button");
-    public static final BlockItemId HEMLOCK_BUTTON = create("hemlock_button");
-    public static final BlockItemId LARCH_BUTTON = create("larch_button");
-    public static final BlockItemId PINE_BUTTON = create("pine_button");
-    public static final BlockItemId REDWOOD_BUTTON = create("redwood_button");
-    public static final BlockItemId SEQUOIA_BUTTON = create("sequoia_button");
-    
     public static final BlockItemId CEDAR_PRESSURE_PLATE = create("cedar_pressure_plate");
-    public static final BlockItemId FIR_PRESSURE_PLATE = create("fir_pressure_plate");
-    public static final BlockItemId HEMLOCK_PRESSURE_PLATE = create("hemlock_pressure_plate");
-    public static final BlockItemId LARCH_PRESSURE_PLATE = create("larch_pressure_plate");
-    public static final BlockItemId PINE_PRESSURE_PLATE = create("pine_pressure_plate");
-    public static final BlockItemId REDWOOD_PRESSURE_PLATE = create("redwood_pressure_plate");
-    public static final BlockItemId SEQUOIA_PRESSURE_PLATE = create("sequoia_pressure_plate");
-    
+    public static final BlockItemId CEDAR_BUTTON = create("cedar_button");
     public static final BlockItemId CEDAR_SIGN = create("cedar_sign");
-    public static final BlockItemId FIR_SIGN = create("fir_sign");
-    public static final BlockItemId HEMLOCK_SIGN = create("hemlock_sign");
-    public static final BlockItemId LARCH_SIGN = create("larch_sign");
-    public static final BlockItemId PINE_SIGN = create("pine_sign");
-    public static final BlockItemId REDWOOD_SIGN = create("redwood_sign");
-    public static final BlockItemId SEQUOIA_SIGN = create("sequoia_sign");
-    
     public static final BlockItemId CEDAR_HANGING_SIGN = create("cedar_hanging_sign");
-    public static final BlockItemId FIR_HANGING_SIGN = create("fir_hanging_sign");
-    public static final BlockItemId HEMLOCK_HANGING_SIGN = create("hemlock_hanging_sign");
-    public static final BlockItemId LARCH_HANGING_SIGN = create("larch_hanging_sign");
-    public static final BlockItemId PINE_HANGING_SIGN = create("pine_hanging_sign");
-    public static final BlockItemId REDWOOD_HANGING_SIGN = create("redwood_hanging_sign");
-    public static final BlockItemId SEQUOIA_HANGING_SIGN = create("sequoia_hanging_sign");
-    
     public static final BlockItemId CEDAR_SHELF = create("cedar_shelf");
-    public static final BlockItemId FIR_SHELF = create("fir_shelf");
-    public static final BlockItemId HEMLOCK_SHELF = create("hemlock_shelf");
-    public static final BlockItemId LARCH_SHELF = create("larch_shelf");
-    public static final BlockItemId PINE_SHELF = create("pine_shelf");
-    public static final BlockItemId REDWOOD_SHELF = create("redwood_shelf");
-    public static final BlockItemId SEQUOIA_SHELF = create("sequoia_shelf");
-
     public static final BlockItemId CEDAR_LEAVES = create("cedar_leaves");
-    public static final BlockItemId FIR_LEAVES = create("fir_leaves");
-    public static final BlockItemId HEMLOCK_LEAVES = create("hemlock_leaves");
-    public static final BlockItemId LARCH_LEAVES = create("larch_leaves");
-    public static final BlockItemId PINE_LEAVES = create("pine_leaves");
-    public static final BlockItemId REDWOOD_LEAVES = create("redwood_leaves");
-    public static final BlockItemId SEQUOIA_LEAVES = create("sequoia_leaves");
-
     public static final BlockItemId CEDAR_SAPLING = create("cedar_sapling");
+    
+    public static final BlockItemId CHERRY_LOG = create("cherry_log");
+    public static final BlockItemId CHERRY_WOOD = create("cherry_wood");
+    public static final BlockItemId STRIPPED_CHERRY_LOG = create("stripped_cherry_log");
+    public static final BlockItemId STRIPPED_CHERRY_WOOD = create("stripped_cherry_wood");
+    public static final BlockItemId CHERRY_PLANKS = create("cherry_planks");
+    public static final BlockItemId CHERRY_STAIRS = create("cherry_stairs");
+    public static final BlockItemId CHERRY_SLAB = create("cherry_slab");
+    public static final BlockItemId CHERRY_FENCE = create("cherry_fence");
+    public static final BlockItemId CHERRY_FENCE_GATE = create("cherry_fence_gate");
+    public static final BlockItemId CHERRY_DOOR = create("cherry_door");
+    public static final BlockItemId CHERRY_TRAPDOOR = create("cherry_trapdoor");
+    public static final BlockItemId CHERRY_PRESSURE_PLATE = create("cherry_pressure_plate");
+    public static final BlockItemId CHERRY_BUTTON = create("cherry_button");
+    public static final BlockItemId CHERRY_SIGN = create("cherry_sign");
+    public static final BlockItemId CHERRY_HANGING_SIGN = create("cherry_hanging_sign");
+    public static final BlockItemId CHERRY_SHELF = create("cherry_shelf");
+    public static final BlockItemId CHERRY_LEAVES = create("cherry_leaves");
+    public static final BlockItemId CHERRY_SAPLING = create("cherry_sapling");
+    
+    public static final BlockItemId CYPRESS_LOG = create("cypress_log");
+    public static final BlockItemId CYPRESS_WOOD = create("cypress_wood");
+    public static final BlockItemId STRIPPED_CYPRESS_LOG = create("stripped_cypress_log");
+    public static final BlockItemId STRIPPED_CYPRESS_WOOD = create("stripped_cypress_wood");
+    public static final BlockItemId CYPRESS_PLANKS = create("cypress_planks");
+    public static final BlockItemId CYPRESS_STAIRS = create("cypress_stairs");
+    public static final BlockItemId CYPRESS_SLAB = create("cypress_slab");
+    public static final BlockItemId CYPRESS_FENCE = create("cypress_fence");
+    public static final BlockItemId CYPRESS_FENCE_GATE = create("cypress_fence_gate");
+    public static final BlockItemId CYPRESS_DOOR = create("cypress_door");
+    public static final BlockItemId CYPRESS_TRAPDOOR = create("cypress_trapdoor");
+    public static final BlockItemId CYPRESS_PRESSURE_PLATE = create("cypress_pressure_plate");
+    public static final BlockItemId CYPRESS_BUTTON = create("cypress_button");
+    public static final BlockItemId CYPRESS_SIGN = create("cypress_sign");
+    public static final BlockItemId CYPRESS_HANGING_SIGN = create("cypress_hanging_sign");
+    public static final BlockItemId CYPRESS_SHELF = create("cypress_shelf");
+    public static final BlockItemId CYPRESS_LEAVES = create("cypress_leaves");
+    public static final BlockItemId CYPRESS_SAPLING = create("cypress_sapling");
+    
+    public static final BlockItemId EBONY_LOG = create("ebony_log");
+    public static final BlockItemId EBONY_WOOD = create("ebony_wood");
+    public static final BlockItemId STRIPPED_EBONY_LOG = create("stripped_ebony_log");
+    public static final BlockItemId STRIPPED_EBONY_WOOD = create("stripped_ebony_wood");
+    public static final BlockItemId EBONY_PLANKS = create("ebony_planks");
+    public static final BlockItemId EBONY_STAIRS = create("ebony_stairs");
+    public static final BlockItemId EBONY_SLAB = create("ebony_slab");
+    public static final BlockItemId EBONY_FENCE = create("ebony_fence");
+    public static final BlockItemId EBONY_FENCE_GATE = create("ebony_fence_gate");
+    public static final BlockItemId EBONY_DOOR = create("ebony_door");
+    public static final BlockItemId EBONY_TRAPDOOR = create("ebony_trapdoor");
+    public static final BlockItemId EBONY_PRESSURE_PLATE = create("ebony_pressure_plate");
+    public static final BlockItemId EBONY_BUTTON = create("ebony_button");
+    public static final BlockItemId EBONY_SIGN = create("ebony_sign");
+    public static final BlockItemId EBONY_HANGING_SIGN = create("ebony_hanging_sign");
+    public static final BlockItemId EBONY_SHELF = create("ebony_shelf");
+    public static final BlockItemId EBONY_LEAVES = create("ebony_leaves");
+    public static final BlockItemId EBONY_SAPLING = create("ebony_sapling");
+    
+    public static final BlockItemId ELM_LOG = create("elm_log");
+    public static final BlockItemId ELM_WOOD = create("elm_wood");
+    public static final BlockItemId STRIPPED_ELM_LOG = create("stripped_elm_log");
+    public static final BlockItemId STRIPPED_ELM_WOOD = create("stripped_elm_wood");
+    public static final BlockItemId ELM_PLANKS = create("elm_planks");
+    public static final BlockItemId ELM_STAIRS = create("elm_stairs");
+    public static final BlockItemId ELM_SLAB = create("elm_slab");
+    public static final BlockItemId ELM_FENCE = create("elm_fence");
+    public static final BlockItemId ELM_FENCE_GATE = create("elm_fence_gate");
+    public static final BlockItemId ELM_DOOR = create("elm_door");
+    public static final BlockItemId ELM_TRAPDOOR = create("elm_trapdoor");
+    public static final BlockItemId ELM_PRESSURE_PLATE = create("elm_pressure_plate");
+    public static final BlockItemId ELM_BUTTON = create("elm_button");
+    public static final BlockItemId ELM_SIGN = create("elm_sign");
+    public static final BlockItemId ELM_HANGING_SIGN = create("elm_hanging_sign");
+    public static final BlockItemId ELM_SHELF = create("elm_shelf");
+    public static final BlockItemId ELM_LEAVES = create("elm_leaves");
+    public static final BlockItemId ELM_SAPLING = create("elm_sapling");
+    
+    public static final BlockItemId EUCALYPTUS_LOG = create("eucalyptus_log");
+    public static final BlockItemId EUCALYPTUS_WOOD = create("eucalyptus_wood");
+    public static final BlockItemId STRIPPED_EUCALYPTUS_LOG = create("stripped_eucalyptus_log");
+    public static final BlockItemId STRIPPED_EUCALYPTUS_WOOD = create("stripped_eucalyptus_wood");
+    public static final BlockItemId EUCALYPTUS_PLANKS = create("eucalyptus_planks");
+    public static final BlockItemId EUCALYPTUS_STAIRS = create("eucalyptus_stairs");
+    public static final BlockItemId EUCALYPTUS_SLAB = create("eucalyptus_slab");
+    public static final BlockItemId EUCALYPTUS_FENCE = create("eucalyptus_fence");
+    public static final BlockItemId EUCALYPTUS_FENCE_GATE = create("eucalyptus_fence_gate");
+    public static final BlockItemId EUCALYPTUS_DOOR = create("eucalyptus_door");
+    public static final BlockItemId EUCALYPTUS_TRAPDOOR = create("eucalyptus_trapdoor");
+    public static final BlockItemId EUCALYPTUS_PRESSURE_PLATE = create("eucalyptus_pressure_plate");
+    public static final BlockItemId EUCALYPTUS_BUTTON = create("eucalyptus_button");
+    public static final BlockItemId EUCALYPTUS_SIGN = create("eucalyptus_sign");
+    public static final BlockItemId EUCALYPTUS_HANGING_SIGN = create("eucalyptus_hanging_sign");
+    public static final BlockItemId EUCALYPTUS_SHELF = create("eucalyptus_shelf");
+    public static final BlockItemId EUCALYPTUS_LEAVES = create("eucalyptus_leaves");
+    public static final BlockItemId EUCALYPTUS_SAPLING = create("eucalyptus_sapling");
+    
+    public static final BlockItemId FIG_LOG = create("fig_log");
+    public static final BlockItemId FIG_WOOD = create("fig_wood");
+    public static final BlockItemId STRIPPED_FIG_LOG = create("stripped_fig_log");
+    public static final BlockItemId STRIPPED_FIG_WOOD = create("stripped_fig_wood");
+    public static final BlockItemId FIG_PLANKS = create("fig_planks");
+    public static final BlockItemId FIG_STAIRS = create("fig_stairs");
+    public static final BlockItemId FIG_SLAB = create("fig_slab");
+    public static final BlockItemId FIG_FENCE = create("fig_fence");
+    public static final BlockItemId FIG_FENCE_GATE = create("fig_fence_gate");
+    public static final BlockItemId FIG_DOOR = create("fig_door");
+    public static final BlockItemId FIG_TRAPDOOR = create("fig_trapdoor");
+    public static final BlockItemId FIG_PRESSURE_PLATE = create("fig_pressure_plate");
+    public static final BlockItemId FIG_BUTTON = create("fig_button");
+    public static final BlockItemId FIG_SIGN = create("fig_sign");
+    public static final BlockItemId FIG_HANGING_SIGN = create("fig_hanging_sign");
+    public static final BlockItemId FIG_SHELF = create("fig_shelf");
+    public static final BlockItemId FIG_LEAVES = create("fig_leaves");
+    public static final BlockItemId FIG_SAPLING = create("fig_sapling");
+
+    public static final BlockItemId FIR_LOG = create("fir_log");
+    public static final BlockItemId FIR_WOOD = create("fir_wood");
+    public static final BlockItemId STRIPPED_FIR_LOG = create("stripped_fir_log");
+    public static final BlockItemId STRIPPED_FIR_WOOD = create("stripped_fir_wood");
+    public static final BlockItemId FIR_PLANKS = create("fir_planks");
+    public static final BlockItemId FIR_STAIRS = create("fir_stairs");
+    public static final BlockItemId FIR_SLAB = create("fir_slab");
+    public static final BlockItemId FIR_FENCE = create("fir_fence");
+    public static final BlockItemId FIR_FENCE_GATE = create("fir_fence_gate");
+    public static final BlockItemId FIR_DOOR = create("fir_door");
+    public static final BlockItemId FIR_TRAPDOOR = create("fir_trapdoor");
+    public static final BlockItemId FIR_PRESSURE_PLATE = create("fir_pressure_plate");
+    public static final BlockItemId FIR_BUTTON = create("fir_button");
+    public static final BlockItemId FIR_SIGN = create("fir_sign");
+    public static final BlockItemId FIR_HANGING_SIGN = create("fir_hanging_sign");
+    public static final BlockItemId FIR_SHELF = create("fir_shelf");
+    public static final BlockItemId FIR_LEAVES = create("fir_leaves");
     public static final BlockItemId FIR_SAPLING = create("fir_sapling");
+    
+    public static final BlockItemId HEMLOCK_LOG = create("hemlock_log");
+    public static final BlockItemId HEMLOCK_WOOD = create("hemlock_wood");
+    public static final BlockItemId STRIPPED_HEMLOCK_LOG = create("stripped_hemlock_log");
+    public static final BlockItemId STRIPPED_HEMLOCK_WOOD = create("stripped_hemlock_wood");
+    public static final BlockItemId HEMLOCK_PLANKS = create("hemlock_planks");
+    public static final BlockItemId HEMLOCK_STAIRS = create("hemlock_stairs");
+    public static final BlockItemId HEMLOCK_SLAB = create("hemlock_slab");
+    public static final BlockItemId HEMLOCK_FENCE = create("hemlock_fence");
+    public static final BlockItemId HEMLOCK_FENCE_GATE = create("hemlock_fence_gate");
+    public static final BlockItemId HEMLOCK_DOOR = create("hemlock_door");
+    public static final BlockItemId HEMLOCK_TRAPDOOR = create("hemlock_trapdoor");
+    public static final BlockItemId HEMLOCK_PRESSURE_PLATE = create("hemlock_pressure_plate");
+    public static final BlockItemId HEMLOCK_BUTTON = create("hemlock_button");
+    public static final BlockItemId HEMLOCK_SIGN = create("hemlock_sign");
+    public static final BlockItemId HEMLOCK_HANGING_SIGN = create("hemlock_hanging_sign");
+    public static final BlockItemId HEMLOCK_SHELF = create("hemlock_shelf");
+    public static final BlockItemId HEMLOCK_LEAVES = create("hemlock_leaves");
     public static final BlockItemId HEMLOCK_SAPLING = create("hemlock_sapling");
+    
+    public static final BlockItemId HICKORY_LOG = create("hickory_log");
+    public static final BlockItemId HICKORY_WOOD = create("hickory_wood");
+    public static final BlockItemId STRIPPED_HICKORY_LOG = create("stripped_hickory_log");
+    public static final BlockItemId STRIPPED_HICKORY_WOOD = create("stripped_hickory_wood");
+    public static final BlockItemId HICKORY_PLANKS = create("hickory_planks");
+    public static final BlockItemId HICKORY_STAIRS = create("hickory_stairs");
+    public static final BlockItemId HICKORY_SLAB = create("hickory_slab");
+    public static final BlockItemId HICKORY_FENCE = create("hickory_fence");
+    public static final BlockItemId HICKORY_FENCE_GATE = create("hickory_fence_gate");
+    public static final BlockItemId HICKORY_DOOR = create("hickory_door");
+    public static final BlockItemId HICKORY_TRAPDOOR = create("hickory_trapdoor");
+    public static final BlockItemId HICKORY_PRESSURE_PLATE = create("hickory_pressure_plate");
+    public static final BlockItemId HICKORY_BUTTON = create("hickory_button");
+    public static final BlockItemId HICKORY_SIGN = create("hickory_sign");
+    public static final BlockItemId HICKORY_HANGING_SIGN = create("hickory_hanging_sign");
+    public static final BlockItemId HICKORY_SHELF = create("hickory_shelf");
+    public static final BlockItemId HICKORY_LEAVES = create("hickory_leaves");
+    public static final BlockItemId HICKORY_SAPLING = create("hickory_sapling");
+    
+    public static final BlockItemId JUNIPER_LOG = create("juniper_log");
+    public static final BlockItemId JUNIPER_WOOD = create("juniper_wood");
+    public static final BlockItemId STRIPPED_JUNIPER_LOG = create("stripped_juniper_log");
+    public static final BlockItemId STRIPPED_JUNIPER_WOOD = create("stripped_juniper_wood");
+    public static final BlockItemId JUNIPER_PLANKS = create("juniper_planks");
+    public static final BlockItemId JUNIPER_STAIRS = create("juniper_stairs");
+    public static final BlockItemId JUNIPER_SLAB = create("juniper_slab");
+    public static final BlockItemId JUNIPER_FENCE = create("juniper_fence");
+    public static final BlockItemId JUNIPER_FENCE_GATE = create("juniper_fence_gate");
+    public static final BlockItemId JUNIPER_DOOR = create("juniper_door");
+    public static final BlockItemId JUNIPER_TRAPDOOR = create("juniper_trapdoor");
+    public static final BlockItemId JUNIPER_PRESSURE_PLATE = create("juniper_pressure_plate");
+    public static final BlockItemId JUNIPER_BUTTON = create("juniper_button");
+    public static final BlockItemId JUNIPER_SIGN = create("juniper_sign");
+    public static final BlockItemId JUNIPER_HANGING_SIGN = create("juniper_hanging_sign");
+    public static final BlockItemId JUNIPER_SHELF = create("juniper_shelf");
+    public static final BlockItemId JUNIPER_LEAVES = create("juniper_leaves");
+    public static final BlockItemId JUNIPER_SAPLING = create("juniper_sapling");
+    
+    public static final BlockItemId KAPOK_LOG = create("kapok_log");
+    public static final BlockItemId KAPOK_WOOD = create("kapok_wood");
+    public static final BlockItemId STRIPPED_KAPOK_LOG = create("stripped_kapok_log");
+    public static final BlockItemId STRIPPED_KAPOK_WOOD = create("stripped_kapok_wood");
+    public static final BlockItemId KAPOK_PLANKS = create("kapok_planks");
+    public static final BlockItemId KAPOK_STAIRS = create("kapok_stairs");
+    public static final BlockItemId KAPOK_SLAB = create("kapok_slab");
+    public static final BlockItemId KAPOK_FENCE = create("kapok_fence");
+    public static final BlockItemId KAPOK_FENCE_GATE = create("kapok_fence_gate");
+    public static final BlockItemId KAPOK_DOOR = create("kapok_door");
+    public static final BlockItemId KAPOK_TRAPDOOR = create("kapok_trapdoor");
+    public static final BlockItemId KAPOK_PRESSURE_PLATE = create("kapok_pressure_plate");
+    public static final BlockItemId KAPOK_BUTTON = create("kapok_button");
+    public static final BlockItemId KAPOK_SIGN = create("kapok_sign");
+    public static final BlockItemId KAPOK_HANGING_SIGN = create("kapok_hanging_sign");
+    public static final BlockItemId KAPOK_SHELF = create("kapok_shelf");
+    public static final BlockItemId KAPOK_LEAVES = create("kapok_leaves");
+    public static final BlockItemId KAPOK_SAPLING = create("kapok_sapling");
+    
+    public static final BlockItemId LARCH_LOG = create("larch_log");
+    public static final BlockItemId LARCH_WOOD = create("larch_wood");
+    public static final BlockItemId STRIPPED_LARCH_LOG = create("stripped_larch_log");
+    public static final BlockItemId STRIPPED_LARCH_WOOD = create("stripped_larch_wood");
+    public static final BlockItemId LARCH_PLANKS = create("larch_planks");
+    public static final BlockItemId LARCH_STAIRS = create("larch_stairs");
+    public static final BlockItemId LARCH_SLAB = create("larch_slab");
+    public static final BlockItemId LARCH_FENCE = create("larch_fence");
+    public static final BlockItemId LARCH_FENCE_GATE = create("larch_fence_gate");
+    public static final BlockItemId LARCH_DOOR = create("larch_door");
+    public static final BlockItemId LARCH_TRAPDOOR = create("larch_trapdoor");
+    public static final BlockItemId LARCH_PRESSURE_PLATE = create("larch_pressure_plate");
+    public static final BlockItemId LARCH_BUTTON = create("larch_button");
+    public static final BlockItemId LARCH_SIGN = create("larch_sign");
+    public static final BlockItemId LARCH_HANGING_SIGN = create("larch_hanging_sign");
+    public static final BlockItemId LARCH_SHELF = create("larch_shelf");
+    public static final BlockItemId LARCH_LEAVES = create("larch_leaves");
     public static final BlockItemId LARCH_SAPLING = create("larch_sapling");
+    
+    public static final BlockItemId MAHOGANY_LOG = create("mahogany_log");
+    public static final BlockItemId MAHOGANY_WOOD = create("mahogany_wood");
+    public static final BlockItemId STRIPPED_MAHOGANY_LOG = create("stripped_mahogany_log");
+    public static final BlockItemId STRIPPED_MAHOGANY_WOOD = create("stripped_mahogany_wood");
+    public static final BlockItemId MAHOGANY_PLANKS = create("mahogany_planks");
+    public static final BlockItemId MAHOGANY_STAIRS = create("mahogany_stairs");
+    public static final BlockItemId MAHOGANY_SLAB = create("mahogany_slab");
+    public static final BlockItemId MAHOGANY_FENCE = create("mahogany_fence");
+    public static final BlockItemId MAHOGANY_FENCE_GATE = create("mahogany_fence_gate");
+    public static final BlockItemId MAHOGANY_DOOR = create("mahogany_door");
+    public static final BlockItemId MAHOGANY_TRAPDOOR = create("mahogany_trapdoor");
+    public static final BlockItemId MAHOGANY_PRESSURE_PLATE = create("mahogany_pressure_plate");
+    public static final BlockItemId MAHOGANY_BUTTON = create("mahogany_button");
+    public static final BlockItemId MAHOGANY_SIGN = create("mahogany_sign");
+    public static final BlockItemId MAHOGANY_HANGING_SIGN = create("mahogany_hanging_sign");
+    public static final BlockItemId MAHOGANY_SHELF = create("mahogany_shelf");
+    public static final BlockItemId MAHOGANY_LEAVES = create("mahogany_leaves");
+    public static final BlockItemId MAHOGANY_SAPLING = create("mahogany_sapling");
+    
+    public static final BlockItemId MAPLE_LOG = create("maple_log");
+    public static final BlockItemId MAPLE_WOOD = create("maple_wood");
+    public static final BlockItemId STRIPPED_MAPLE_LOG = create("stripped_maple_log");
+    public static final BlockItemId STRIPPED_MAPLE_WOOD = create("stripped_maple_wood");
+    public static final BlockItemId MAPLE_PLANKS = create("maple_planks");
+    public static final BlockItemId MAPLE_STAIRS = create("maple_stairs");
+    public static final BlockItemId MAPLE_SLAB = create("maple_slab");
+    public static final BlockItemId MAPLE_FENCE = create("maple_fence");
+    public static final BlockItemId MAPLE_FENCE_GATE = create("maple_fence_gate");
+    public static final BlockItemId MAPLE_DOOR = create("maple_door");
+    public static final BlockItemId MAPLE_TRAPDOOR = create("maple_trapdoor");
+    public static final BlockItemId MAPLE_PRESSURE_PLATE = create("maple_pressure_plate");
+    public static final BlockItemId MAPLE_BUTTON = create("maple_button");
+    public static final BlockItemId MAPLE_SIGN = create("maple_sign");
+    public static final BlockItemId MAPLE_HANGING_SIGN = create("maple_hanging_sign");
+    public static final BlockItemId MAPLE_SHELF = create("maple_shelf");
+    public static final BlockItemId MAPLE_LEAVES = create("maple_leaves");
+    public static final BlockItemId MAPLE_SAPLING = create("maple_sapling");
+    
+    public static final BlockItemId MESQUITE_LOG = create("mesquite_log");
+    public static final BlockItemId MESQUITE_WOOD = create("mesquite_wood");
+    public static final BlockItemId STRIPPED_MESQUITE_LOG = create("stripped_mesquite_log");
+    public static final BlockItemId STRIPPED_MESQUITE_WOOD = create("stripped_mesquite_wood");
+    public static final BlockItemId MESQUITE_PLANKS = create("mesquite_planks");
+    public static final BlockItemId MESQUITE_STAIRS = create("mesquite_stairs");
+    public static final BlockItemId MESQUITE_SLAB = create("mesquite_slab");
+    public static final BlockItemId MESQUITE_FENCE = create("mesquite_fence");
+    public static final BlockItemId MESQUITE_FENCE_GATE = create("mesquite_fence_gate");
+    public static final BlockItemId MESQUITE_DOOR = create("mesquite_door");
+    public static final BlockItemId MESQUITE_TRAPDOOR = create("mesquite_trapdoor");
+    public static final BlockItemId MESQUITE_PRESSURE_PLATE = create("mesquite_pressure_plate");
+    public static final BlockItemId MESQUITE_BUTTON = create("mesquite_button");
+    public static final BlockItemId MESQUITE_SIGN = create("mesquite_sign");
+    public static final BlockItemId MESQUITE_HANGING_SIGN = create("mesquite_hanging_sign");
+    public static final BlockItemId MESQUITE_SHELF = create("mesquite_shelf");
+    public static final BlockItemId MESQUITE_LEAVES = create("mesquite_leaves");
+    public static final BlockItemId MESQUITE_SAPLING = create("mesquite_sapling");
+    
+    public static final BlockItemId OLIVE_LOG = create("olive_log");
+    public static final BlockItemId OLIVE_WOOD = create("olive_wood");
+    public static final BlockItemId STRIPPED_OLIVE_LOG = create("stripped_olive_log");
+    public static final BlockItemId STRIPPED_OLIVE_WOOD = create("stripped_olive_wood");
+    public static final BlockItemId OLIVE_PLANKS = create("olive_planks");
+    public static final BlockItemId OLIVE_STAIRS = create("olive_stairs");
+    public static final BlockItemId OLIVE_SLAB = create("olive_slab");
+    public static final BlockItemId OLIVE_FENCE = create("olive_fence");
+    public static final BlockItemId OLIVE_FENCE_GATE = create("olive_fence_gate");
+    public static final BlockItemId OLIVE_DOOR = create("olive_door");
+    public static final BlockItemId OLIVE_TRAPDOOR = create("olive_trapdoor");
+    public static final BlockItemId OLIVE_PRESSURE_PLATE = create("olive_pressure_plate");
+    public static final BlockItemId OLIVE_BUTTON = create("olive_button");
+    public static final BlockItemId OLIVE_SIGN = create("olive_sign");
+    public static final BlockItemId OLIVE_HANGING_SIGN = create("olive_hanging_sign");
+    public static final BlockItemId OLIVE_SHELF = create("olive_shelf");
+    public static final BlockItemId OLIVE_LEAVES = create("olive_leaves");
+    public static final BlockItemId OLIVE_SAPLING = create("olive_sapling");
+    
+    public static final BlockItemId PALM_LOG = create("palm_log");
+    public static final BlockItemId PALM_WOOD = create("palm_wood");
+    public static final BlockItemId STRIPPED_PALM_LOG = create("stripped_palm_log");
+    public static final BlockItemId STRIPPED_PALM_WOOD = create("stripped_palm_wood");
+    public static final BlockItemId PALM_PLANKS = create("palm_planks");
+    public static final BlockItemId PALM_STAIRS = create("palm_stairs");
+    public static final BlockItemId PALM_SLAB = create("palm_slab");
+    public static final BlockItemId PALM_FENCE = create("palm_fence");
+    public static final BlockItemId PALM_FENCE_GATE = create("palm_fence_gate");
+    public static final BlockItemId PALM_DOOR = create("palm_door");
+    public static final BlockItemId PALM_TRAPDOOR = create("palm_trapdoor");
+    public static final BlockItemId PALM_PRESSURE_PLATE = create("palm_pressure_plate");
+    public static final BlockItemId PALM_BUTTON = create("palm_button");
+    public static final BlockItemId PALM_SIGN = create("palm_sign");
+    public static final BlockItemId PALM_HANGING_SIGN = create("palm_hanging_sign");
+    public static final BlockItemId PALM_SHELF = create("palm_shelf");
+    public static final BlockItemId PALM_LEAVES = create("palm_leaves");
+    public static final BlockItemId PALM_SAPLING = create("palm_sapling");
+    
+    public static final BlockItemId PALO_VERDE_LOG = create("palo_verde_log");
+    public static final BlockItemId PALO_VERDE_WOOD = create("palo_verde_wood");
+    public static final BlockItemId STRIPPED_PALO_VERDE_LOG = create("stripped_palo_verde_log");
+    public static final BlockItemId STRIPPED_PALO_VERDE_WOOD = create("stripped_palo_verde_wood");
+    public static final BlockItemId PALO_VERDE_PLANKS = create("palo_verde_planks");
+    public static final BlockItemId PALO_VERDE_STAIRS = create("palo_verde_stairs");
+    public static final BlockItemId PALO_VERDE_SLAB = create("palo_verde_slab");
+    public static final BlockItemId PALO_VERDE_FENCE = create("palo_verde_fence");
+    public static final BlockItemId PALO_VERDE_FENCE_GATE = create("palo_verde_fence_gate");
+    public static final BlockItemId PALO_VERDE_DOOR = create("palo_verde_door");
+    public static final BlockItemId PALO_VERDE_TRAPDOOR = create("palo_verde_trapdoor");
+    public static final BlockItemId PALO_VERDE_PRESSURE_PLATE = create("palo_verde_pressure_plate");
+    public static final BlockItemId PALO_VERDE_BUTTON = create("palo_verde_button");
+    public static final BlockItemId PALO_VERDE_SIGN = create("palo_verde_sign");
+    public static final BlockItemId PALO_VERDE_HANGING_SIGN = create("palo_verde_hanging_sign");
+    public static final BlockItemId PALO_VERDE_SHELF = create("palo_verde_shelf");
+    public static final BlockItemId PALO_VERDE_LEAVES = create("palo_verde_leaves");
+    public static final BlockItemId PALO_VERDE_SAPLING = create("palo_verde_sapling");
+    
+    public static final BlockItemId PINE_LOG = create("pine_log");
+    public static final BlockItemId PINE_WOOD = create("pine_wood");
+    public static final BlockItemId STRIPPED_PINE_LOG = create("stripped_pine_log");
+    public static final BlockItemId STRIPPED_PINE_WOOD = create("stripped_pine_wood");
+    public static final BlockItemId PINE_PLANKS = create("pine_planks");
+    public static final BlockItemId PINE_STAIRS = create("pine_stairs");
+    public static final BlockItemId PINE_SLAB = create("pine_slab");
+    public static final BlockItemId PINE_FENCE = create("pine_fence");
+    public static final BlockItemId PINE_FENCE_GATE = create("pine_fence_gate");
+    public static final BlockItemId PINE_DOOR = create("pine_door");
+    public static final BlockItemId PINE_TRAPDOOR = create("pine_trapdoor");
+    public static final BlockItemId PINE_PRESSURE_PLATE = create("pine_pressure_plate");
+    public static final BlockItemId PINE_BUTTON = create("pine_button");
+    public static final BlockItemId PINE_SIGN = create("pine_sign");
+    public static final BlockItemId PINE_HANGING_SIGN = create("pine_hanging_sign");
+    public static final BlockItemId PINE_SHELF = create("pine_shelf");
+    public static final BlockItemId PINE_LEAVES = create("pine_leaves");
     public static final BlockItemId PINE_SAPLING = create("pine_sapling");
+    
+    public static final BlockItemId REDWOOD_LOG = create("redwood_log");
+    public static final BlockItemId REDWOOD_WOOD = create("redwood_wood");
+    public static final BlockItemId STRIPPED_REDWOOD_LOG = create("stripped_redwood_log");
+    public static final BlockItemId STRIPPED_REDWOOD_WOOD = create("stripped_redwood_wood");
+    public static final BlockItemId REDWOOD_PLANKS = create("redwood_planks");
+    public static final BlockItemId REDWOOD_STAIRS = create("redwood_stairs");
+    public static final BlockItemId REDWOOD_SLAB = create("redwood_slab");
+    public static final BlockItemId REDWOOD_FENCE = create("redwood_fence");
+    public static final BlockItemId REDWOOD_FENCE_GATE = create("redwood_fence_gate");
+    public static final BlockItemId REDWOOD_DOOR = create("redwood_door");
+    public static final BlockItemId REDWOOD_TRAPDOOR = create("redwood_trapdoor");
+    public static final BlockItemId REDWOOD_PRESSURE_PLATE = create("redwood_pressure_plate");
+    public static final BlockItemId REDWOOD_BUTTON = create("redwood_button");
+    public static final BlockItemId REDWOOD_SIGN = create("redwood_sign");
+    public static final BlockItemId REDWOOD_HANGING_SIGN = create("redwood_hanging_sign");
+    public static final BlockItemId REDWOOD_SHELF = create("redwood_shelf");
+    public static final BlockItemId REDWOOD_LEAVES = create("redwood_leaves");
     public static final BlockItemId REDWOOD_SAPLING = create("redwood_sapling");
+    
+    public static final BlockItemId SEQUOIA_LOG = create("sequoia_log");
+    public static final BlockItemId SEQUOIA_WOOD = create("sequoia_wood");
+    public static final BlockItemId STRIPPED_SEQUOIA_LOG = create("stripped_sequoia_log");
+    public static final BlockItemId STRIPPED_SEQUOIA_WOOD = create("stripped_sequoia_wood");
+    public static final BlockItemId SEQUOIA_PLANKS = create("sequoia_planks");
+    public static final BlockItemId SEQUOIA_STAIRS = create("sequoia_stairs");
+    public static final BlockItemId SEQUOIA_SLAB = create("sequoia_slab");
+    public static final BlockItemId SEQUOIA_FENCE = create("sequoia_fence");
+    public static final BlockItemId SEQUOIA_FENCE_GATE = create("sequoia_fence_gate");
+    public static final BlockItemId SEQUOIA_DOOR = create("sequoia_door");
+    public static final BlockItemId SEQUOIA_TRAPDOOR = create("sequoia_trapdoor");
+    public static final BlockItemId SEQUOIA_PRESSURE_PLATE = create("sequoia_pressure_plate");
+    public static final BlockItemId SEQUOIA_BUTTON = create("sequoia_button");
+    public static final BlockItemId SEQUOIA_SIGN = create("sequoia_sign");
+    public static final BlockItemId SEQUOIA_HANGING_SIGN = create("sequoia_hanging_sign");
+    public static final BlockItemId SEQUOIA_SHELF = create("sequoia_shelf");
+    public static final BlockItemId SEQUOIA_LEAVES = create("sequoia_leaves");
     public static final BlockItemId SEQUOIA_SAPLING = create("sequoia_sapling");
+    
+    public static final BlockItemId WILLOW_LOG = create("willow_log");
+    public static final BlockItemId WILLOW_WOOD = create("willow_wood");
+    public static final BlockItemId STRIPPED_WILLOW_LOG = create("stripped_willow_log");
+    public static final BlockItemId STRIPPED_WILLOW_WOOD = create("stripped_willow_wood");
+    public static final BlockItemId WILLOW_PLANKS = create("willow_planks");
+    public static final BlockItemId WILLOW_STAIRS = create("willow_stairs");
+    public static final BlockItemId WILLOW_SLAB = create("willow_slab");
+    public static final BlockItemId WILLOW_FENCE = create("willow_fence");
+    public static final BlockItemId WILLOW_FENCE_GATE = create("willow_fence_gate");
+    public static final BlockItemId WILLOW_DOOR = create("willow_door");
+    public static final BlockItemId WILLOW_TRAPDOOR = create("willow_trapdoor");
+    public static final BlockItemId WILLOW_PRESSURE_PLATE = create("willow_pressure_plate");
+    public static final BlockItemId WILLOW_BUTTON = create("willow_button");
+    public static final BlockItemId WILLOW_SIGN = create("willow_sign");
+    public static final BlockItemId WILLOW_HANGING_SIGN = create("willow_hanging_sign");
+    public static final BlockItemId WILLOW_SHELF = create("willow_shelf");
+    public static final BlockItemId WILLOW_LEAVES = create("willow_leaves");
+    public static final BlockItemId WILLOW_SAPLING = create("willow_sapling");
+    
+    //* ----------------------------------------------------------------------------------------------------------------------------------
 
     public static final BlockItemId WHITE_SAND = create("white_sand");
     public static final BlockItemId WHITE_SANDSTONE = create("white_sandstone");
@@ -164,22 +553,42 @@ public class AWRBlockItemIds {
     public static final BlockItemId SMOOTH_WHITE_SANDSTONE_SLAB = create("smooth_white_sandstone_slab");
     public static final BlockItemId SMOOTH_WHITE_SANDSTONE_STAIRS = create("smooth_white_sandstone_stairs");
     public static final BlockItemId CHISELED_WHITE_SANDSTONE = create("chiseled_white_sandstone");
+    
+    public static final BlockItemId SNOW_BRICKS = create("snow_bricks");
+    public static final BlockItemId SNOW_BRICK_STAIRS = create("snow_brick_stairs");
+    public static final BlockItemId SNOW_BRICK_SLAB = create("snow_brick_slab");
+    public static final BlockItemId SNOW_BRICK_WALL = create("snow_brick_wall");
+    
+    public static final BlockItemId PACKED_ICE_BRICKS = create("packed_ice_bricks");
+    public static final BlockItemId PACKED_ICE_BRICK_STAIRS = create("packed_ice_brick_stairs");
+    public static final BlockItemId PACKED_ICE_BRICK_SLAB = create("packed_ice_brick_slab");
+    public static final BlockItemId PACKED_ICE_BRICK_WALL = create("packed_ice_brick_wall");
 
     public static final BlockItemId PERMAFROST = create("permafrost");
     public static final BlockItemId SHORT_FROSTED_GRASS = create("short_frosted_grass");
     public static final BlockItemId TALL_FROSTED_GRASS = create("tall_frosted_grass");
     public static final BlockItemId SHORT_TUNDRA_GRASS = create("short_tundra_grass");
     public static final BlockItemId TALL_TUNDRA_GRASS = create("tall_tundra_grass");
+    public static final BlockItemId PINECONES = create("pinecones");
+    public static final BlockItemId PEAT = create("peat");
+    public static final BlockItemId PEAT_BLOCK = create("peat_block");
+    public static final BlockItemId QUICKSAND = create("quicksand", "quicksand_bucket");
+    public static final BlockItemId CATTAIL = create("cattail");
+    public static final BlockItemId SHORT_PRAIRIE_GRASS = create("short_prairie_grass");
+    public static final BlockItemId TALL_PRAIRIE_GRASS = create("tall_prairie_grass");
 
     //` ---------------------------------------------------------------------------------------------------------------------------------------
 
-    public static BlockItemId create(final String name) {
-        Identifier id = Identifier.fromNamespaceAndPath(AWorldReimagined.MOD_ID, name);
+    private static BlockItemId create(final String name) {
+        Identifier id = AWorldReimagined.id(name);
         return create(id, id);
     }
-
-    public static BlockItemId create(final Identifier blockId, final Identifier itemId) {
+    
+    private static BlockItemId create(final String blockName, final String itemName) {
+        return create(AWorldReimagined.id(blockName), AWorldReimagined.id(itemName));
+    }
+    
+    private static BlockItemId create(final Identifier blockId, final Identifier itemId) {
         return new BlockItemId(ResourceKey.create(Registries.BLOCK, blockId), ResourceKey.create(Registries.ITEM, itemId));
     }
 }
-*/

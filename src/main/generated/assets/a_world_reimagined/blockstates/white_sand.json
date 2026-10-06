@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "a_world_reimagined:block/white_sand"
+      },
+      {
+        "model": "a_world_reimagined:block/white_sand",
+        "y": 90
+      },
+      {
+        "model": "a_world_reimagined:block/white_sand",
+        "y": 180
+      },
+      {
+        "model": "a_world_reimagined:block/white_sand",
+        "y": 270
+      }
+    ]
+  }
+}

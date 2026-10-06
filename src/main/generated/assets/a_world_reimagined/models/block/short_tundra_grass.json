@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "a_world_reimagined:block/short_tundra_grass"
+  }
+}

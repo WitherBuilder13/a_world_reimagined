@@ -1,0 +1,24 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "parameters": {
+    "continentalness": [
+      0.3,
+      1.0
+    ],
+    "erosion": [
+      -0.7799,
+      -0.2225
+    ],
+    "humidity": [
+      -1.0,
+      -0.1
+    ],
+    "minecraft:overworld/ridges_folded": [
+      -0.1999,
+      0.1999
+    ]
+  },
+  "replacement": "a_world_reimagined:tundra",
+  "targets": "minecraft:snowy_plains"
+}

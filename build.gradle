@@ -43,7 +43,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation "maven.modrinth:lithostitched:1.7.13-fabric-26.2"
+	implementation "maven.modrinth:lithostitched:2.0.4-fabric-26.3" //https://modrinth.com/mod/lithostitched
+	implementation "maven.modrinth:loot-table-modifier:2.4.0+fabric+26.3" //https://modrinth.com/mod/loot-table-modifier
+	implementation "maven.modrinth:monkeylib538:5.3.1+fabric+26.2" //https://modrinth.com/mod/monkeylib538
+	implementation "maven.modrinth:placeholder-api:3.2.0+26.3" //https://modrinth.com/mod/placeholder-api
 }
 
 processResources {

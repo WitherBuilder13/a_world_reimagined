@@ -1,0 +1,7 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "minecraft:grove",
+  "features": "minecraft:trees_grove",
+  "priority": 1000,
+  "step": "vegetal_decoration"
+}
