@@ -6,11 +6,9 @@ import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -19,7 +17,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.HashMap;
 import java.util.List;
@@ -103,11 +101,9 @@ public class AWRBlockLootProvider extends FabricBlockLootSubProvider {
 		leavesWithSaplings.put(REDWOOD_LEAVES, REDWOOD_SAPLING);
 		leavesWithSaplings.put(SEQUOIA_LEAVES, SEQUOIA_SAPLING);
 		
-		//! FABRIC BUG - https://github.com/FabricMC/fabric-api/issues/5534
-		/*//
 		leavesWithSaplings.forEach((l, s) -> createLeavesDrops(l, s, NORMAL_LEAVES_SAPLING_CHANCES));
 		
-		createSingleItemTableWithSilkTouch(PERMAFROST, DIRT);
+		createSingleItemTableWithSilkTouch(PERMAFROST, Items.DIRT);
 		createShearsOrSilkTouchOnlyDrop(SHORT_FROSTED_GRASS);
 		createShearsOrSilkTouchOnlyDrop(SHORT_TUNDRA_GRASS);
 		createShearsOrSilkTouchOnlyDrop(TALL_FROSTED_GRASS);
@@ -122,7 +118,6 @@ public class AWRBlockLootProvider extends FabricBlockLootSubProvider {
 		dropWhenSilkTouch(PACKED_ICE_BRICK_STAIRS);
 		dropWhenSilkTouch(PACKED_ICE_BRICK_SLAB);
 		dropWhenSilkTouch(PACKED_ICE_BRICK_WALL);
-		 */
 		
 		createSinglePropConditionTable(CATTAIL, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER);
 		
@@ -137,7 +132,7 @@ public class AWRBlockLootProvider extends FabricBlockLootSubProvider {
 														layers -> layers == 8
 																? LootItem.lootTableItem(PEAT_BLOCK)
 																: LootItem.lootTableItem(PEAT)
-																.apply(SetItemCountFunction.setCount(ConstantValue.exactly(layers)))
+																.apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(layers)))
 																.when(
 																		MatchBlock.blockMatches(
 																				this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(SnowLayerBlock.LAYERS, layers)

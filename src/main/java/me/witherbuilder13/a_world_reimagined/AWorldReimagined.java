@@ -2,17 +2,14 @@ package me.witherbuilder13.a_world_reimagined;
 
 import me.witherbuilder13.a_world_reimagined.block.AWRBlocks;
 import me.witherbuilder13.a_world_reimagined.block.util.AWRCauldronInteractions;
+import me.witherbuilder13.a_world_reimagined.devonly.AWRBiomeModifiers;
 import me.witherbuilder13.a_world_reimagined.entity.AWREntityTypes;
 import me.witherbuilder13.a_world_reimagined.item.AWRCreativeModeTabs;
 import me.witherbuilder13.a_world_reimagined.item.AWRItems;
-import me.witherbuilder13.a_world_reimagined.devonly.AWRBiomeModifiers;
+import me.witherbuilder13.a_world_reimagined.item.component.AWRBlockTransformers;
 import me.witherbuilder13.a_world_reimagined.world.feature.AWRFeatureUtils;
 import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.cauldron.CauldronInteraction;
-import net.minecraft.core.cauldron.CauldronInteractions;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
@@ -37,7 +34,8 @@ public class AWorldReimagined implements ModInitializer {
 		AWRCreativeModeTabs.init();
 		AWRFeatureUtils.init();
 		AWREntityTypes.init();
-		//AWRBiomeModifiers.init();
+		AWRBlockTransformers.init();
+		AWRBiomeModifiers.init();
 		AWRCauldronInteractions.bootstrap();
 		
 		DispenserBlock.registerBehavior(AWRItems.QUICKSAND_BUCKET, new DefaultDispenseItemBehavior() {

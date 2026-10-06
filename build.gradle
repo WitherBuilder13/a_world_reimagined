@@ -44,8 +44,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation "maven.modrinth:lithostitched:2.0.0+beta1-fabric-26.3"
-	//implementation "com.github.WitherBuilder13:advanced_tree_config:main-SNAPSHOT"
+	//implementation "maven.modrinth:lithostitched:2.0.0+beta1-fabric-26.3"
 }
 
 processResources {

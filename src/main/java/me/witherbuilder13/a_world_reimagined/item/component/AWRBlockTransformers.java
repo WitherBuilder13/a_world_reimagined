@@ -1,30 +1,21 @@
-package me.witherbuilder13.a_world_reimagined.mixin;
+package me.witherbuilder13.a_world_reimagined.item.component;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.core.component.BlockTransformer.BlockTransformData;
+import me.witherbuilder13.a_world_reimagined.api.ExtensibleBlockTransformer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.component.BlockTransformer;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.component.BlockTransformerMappings;
+import net.minecraft.world.item.component.BlockTransformers;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.stateproviders.CopyPropertiesProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static me.witherbuilder13.a_world_reimagined.block.AWRBlocks.*;
 
-@Mixin(BlockTransformerMappings.class)
-public class BlockTransformerMappingsMixin {
+public class AWRBlockTransformers {
 	
-	@Redirect(
-			method = "<clinit>",
-			at = @At(
-					value = "INVOKE",
-					target = "Lcom/google/common/collect/ImmutableList$Builder;build()Lcom/google/common/collect/ImmutableList;",
-					ordinal = 0
-			)
-	)
-	private static ImmutableList<BlockTransformData> awr$addStrippables(ImmutableList.Builder<BlockTransformData> builder) {
+	private static BlockTransformer.BlockTransformData awrStrippables() {
 		RuleBasedStateProvider.Builder rules = RuleBasedStateProvider.builder();
 		
 		rules.ifTrueThenProvide(BlockPredicate.matchesBlocks(ASPEN_LOG), new CopyPropertiesProvider(STRIPPED_ASPEN_LOG));
@@ -44,11 +35,19 @@ public class BlockTransformerMappingsMixin {
 		rules.ifTrueThenProvide(BlockPredicate.matchesBlocks(SEQUOIA_LOG), new CopyPropertiesProvider(STRIPPED_SEQUOIA_LOG));
 		rules.ifTrueThenProvide(BlockPredicate.matchesBlocks(SEQUOIA_WOOD), new CopyPropertiesProvider(STRIPPED_SEQUOIA_WOOD));
 		
-		BlockTransformData strippables = BlockTransformData.builder(rules.build())
+		return BlockTransformer.BlockTransformData.builder(rules.build())
 				.sound(SoundEvents.AXE_STRIP)
 				.build();
-		
-		builder.add(strippables);
-		return builder.build();
 	}
+	
+	public static void init() {
+		ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
+			RegistryAccess registryAccess = server.registryAccess();
+			
+			BlockTransformer axe = registryAccess.lookupOrThrow(Registries.BLOCK_TRANSFORMER).getOrThrow(BlockTransformers.AXE).value();
+			
+			((ExtensibleBlockTransformer) (Object) axe).awr$addTransform(awrStrippables());
+		});
+	}
+	
 }

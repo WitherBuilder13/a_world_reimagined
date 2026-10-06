@@ -8,6 +8,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.ARGB;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.EntityTypes;
@@ -99,7 +100,7 @@ public class AWRBiomeData {
 				.mobSpawnSettings(mobs.build())
 				.generationSettings(generation.build())
 				.specialEffects(effects.build())
-				.setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, -16507085)
+				.setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, ARGB.vector3fFromRGB24(-16507085))
 				.build();
 	}
 	
@@ -186,6 +187,7 @@ public class AWRBiomeData {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
 		globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.PATCH_GRASS_PRAIRIE);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation, true);
 		
 		return OverworldBiomes.baseBiome(0.4F, 0.1F)
@@ -260,6 +262,7 @@ public class AWRBiomeData {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
 		globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.PATCH_GRASS_TUNDRA);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation, true);
 		
 		BiomeSpecialEffects.Builder effects = new BiomeSpecialEffects.Builder();
@@ -283,6 +286,7 @@ public class AWRBiomeData {
 		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
 		globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addDefaultMushrooms(generation);
+		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.PATCH_GRASS_PRAIRIE);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(generation, true);
 		generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.TREES_WOODED_TUNDRA);
 		

@@ -2,8 +2,10 @@ package me.witherbuilder13.a_world_reimagined.world.feature;
 
 import me.witherbuilder13.a_world_reimagined.world.feature.trunkplacer.ExtraGiantTrunkPlacer;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedList;
@@ -94,17 +96,18 @@ public class AWRTreeFeatures {
 
     public static void bootstrap(BootstrapContext<Feature> context) {
 
-        HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
-        BlockStateProvider belowTrunkProvider = TreeFeature.defaultPlaceBelowTreeTrunkProvider(biomes);
+        HolderGetter<BlockStateProvider> blockStateProviders = context.lookup(Registries.BLOCK_STATE_PROVIDER);
         
         PlaceOnGroundDecorator sparsePinecones = new PlaceOnGroundDecorator(
-                96, 4, 2, new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 3))
+                96, 4, 2, Holder.direct(new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 3)))
         );
         PlaceOnGroundDecorator thickPinecones = new PlaceOnGroundDecorator(
-                150, 2, 2, new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 4))
+                150, 2, 2,Holder.direct(new WeightedStateProvider(AWRVegetationFeatures.pineconesPatchBuilder(1, 4)))
         );
 
+        Holder<BlockStateProvider> belowTrunkProvider = blockStateProviders.getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
+        
         context.register(
                 ASPEN,
                 conifer(
@@ -467,12 +470,12 @@ public class AWRTreeFeatures {
             IntProvider radius,
             IntProvider offset,
             IntProvider trunkHeightOrFoliageHeightIfTop,
-            final BlockStateProvider belowTrunkProvider
+            final Holder<BlockStateProvider> belowTrunkProvider
     ) {
         return new TreeFeature.Builder(
-                BlockStateProvider.simple(log),
+                BlockStateProvider.of(log),
                 new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB),
-                BlockStateProvider.simple(leaves),
+                BlockStateProvider.of(leaves),
                 top ? new PineFoliagePlacer(radius, offset, trunkHeightOrFoliageHeightIfTop) : new SpruceFoliagePlacer(radius, offset, trunkHeightOrFoliageHeightIfTop),
                 new TwoLayersFeatureSize(1, 0, 1),
                 belowTrunkProvider
@@ -488,12 +491,12 @@ public class AWRTreeFeatures {
             IntProvider radius,
             IntProvider offset,
             IntProvider crownHeight,
-            final BlockStateProvider belowTrunkProvider
+            final Holder<BlockStateProvider> belowTrunkProvider
     ) {
         return new TreeFeature.Builder(
-                BlockStateProvider.simple(log),
+                BlockStateProvider.of(log),
                 new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB),
-                BlockStateProvider.simple(leaves),
+                BlockStateProvider.of(leaves),
                 new MegaPineFoliagePlacer(radius, offset, crownHeight),
                 new TwoLayersFeatureSize(1, 0, 1),
                 belowTrunkProvider
@@ -509,12 +512,12 @@ public class AWRTreeFeatures {
             IntProvider radius,
             IntProvider offset,
             IntProvider crownHeight,
-            final BlockStateProvider belowTrunkProvider
+            final Holder<BlockStateProvider> belowTrunkProvider
     ) {
         return new TreeFeature.Builder(
-                BlockStateProvider.simple(log),
+                BlockStateProvider.of(log),
                 new GiantTrunkPlacer(baseHeight, heightRandA, heightRandB),
-                BlockStateProvider.simple(leaves),
+                BlockStateProvider.of(leaves),
                 new MegaPineFoliagePlacer(radius, offset, crownHeight),
                 new TwoLayersFeatureSize(1, 1, 2),
                 belowTrunkProvider
@@ -525,12 +528,12 @@ public class AWRTreeFeatures {
             Block log,
             Block leaves,
             int baseHeight,
-            final BlockStateProvider belowTrunkProvider
+            final Holder<BlockStateProvider> belowTrunkProvider
     ) {
         return new TreeFeature.Builder(
-                BlockStateProvider.simple(log),
+                BlockStateProvider.of(log),
                 new ForkingTrunkPlacer(baseHeight, 1, 2),
-                BlockStateProvider.simple(leaves),
+                BlockStateProvider.of(leaves),
                 new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                 new TwoLayersFeatureSize(1, 0, 1),
                 belowTrunkProvider
@@ -546,12 +549,12 @@ public class AWRTreeFeatures {
             IntProvider diameter,
             IntProvider thinHeight,
             boolean cutCorners,
-            final BlockStateProvider belowTrunkProvider
+            final Holder<BlockStateProvider> belowTrunkProvider
     ) {
         return new TreeFeature.Builder(
-                BlockStateProvider.simple(log),
+                BlockStateProvider.of(log),
                 new ExtraGiantTrunkPlacer(baseHeight, heightRandA, heightRandB, diameter, thinHeight, cutCorners),
-                BlockStateProvider.simple(leaves),
+                BlockStateProvider.of(leaves),
                 new MegaPineFoliagePlacer(diameter, ConstantInt.of(0), UniformInt.of(20, 24)),
                 new TwoLayersFeatureSize(1, 2, 3),
                 belowTrunkProvider
@@ -561,7 +564,7 @@ public class AWRTreeFeatures {
 
     private static FallenTreeFeature.Builder fallenTree(final Block logBlock, final int minLength, final int maxLength) {
         return new FallenTreeFeature.Builder(
-                BlockStateProvider.simple(logBlock),
+                BlockStateProvider.of(logBlock),
                 UniformInt.of(minLength, maxLength)
         );
     }
@@ -569,10 +572,12 @@ public class AWRTreeFeatures {
     private static TreeDecorator basicMushrooms(float probability, int redWeight, int brownWeight) {
         return new AttachedToLogsDecorator(
                 probability,
-                new WeightedStateProvider(
-                        WeightedList.<BlockState>builder()
-                                .add(Blocks.RED_MUSHROOM.defaultBlockState(), redWeight)
-                                .add(Blocks.BROWN_MUSHROOM.defaultBlockState(), brownWeight)
+                Holder.direct(
+                        new WeightedStateProvider(
+                                WeightedList.<BlockState>builder()
+                                        .add(Blocks.RED_MUSHROOM.defaultBlockState(), redWeight)
+                                        .add(Blocks.BROWN_MUSHROOM.defaultBlockState(), brownWeight)
+                        )
                 ),
                 List.of(Direction.UP)
         );

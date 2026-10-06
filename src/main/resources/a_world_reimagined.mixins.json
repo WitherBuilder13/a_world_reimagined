@@ -3,7 +3,7 @@
   "package": "me.witherbuilder13.a_world_reimagined.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "BlockTransformerMappingsMixin",
+    "BlockTransformerMixin",
     "CauldronDispatchAccessor",
     "CauldronMixin",
     "FallingBlockEntityMixin",

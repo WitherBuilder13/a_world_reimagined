@@ -183,9 +183,11 @@ public class AWRCreativeModeTabs {
 			content.insertAfter(PINE_SAPLING, REDWOOD_SAPLING);
 			content.insertAfter(REDWOOD_SAPLING, SEQUOIA_SAPLING);
 			
-			content.insertAfter(SHORT_GRASS, SHORT_FROSTED_GRASS);
+			content.insertAfter(SHORT_GRASS, SHORT_PRAIRIE_GRASS);
+			content.insertAfter(SHORT_PRAIRIE_GRASS, SHORT_FROSTED_GRASS);
 			content.insertAfter(DRY_SHORT_GRASS, SHORT_TUNDRA_GRASS);
-			content.insertAfter(TALL_GRASS, TALL_FROSTED_GRASS);
+			content.insertAfter(TALL_GRASS, TALL_PRAIRIE_GRASS);
+			content.insertAfter(TALL_PRAIRIE_GRASS, TALL_FROSTED_GRASS);
 			content.insertAfter(DRY_TALL_GRASS, TALL_TUNDRA_GRASS);
 			
 			content.insertAfter(LEAF_LITTER, PINECONES);

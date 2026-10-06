@@ -7,6 +7,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedList;
@@ -17,7 +18,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedRandomSelectorFeature;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.function.Consumer;
@@ -37,6 +40,10 @@ public class AWRVegetationFeatures {
     public static final ResourceKey<Feature> TREES_SNOWY_TAIGA = AWRFeatureUtils.of("trees_snowy_taiga");
     public static final ResourceKey<Feature> TREES_TAIGA = AWRFeatureUtils.of("trees_taiga");
     public static final ResourceKey<Feature> TREES_WOODED_TUNDRA = AWRFeatureUtils.of("trees_wooded_tundra");
+    
+    public static final ResourceKey<Feature> GRASS_PRAIRIE = AWRFeatureUtils.of("grass_prairie");
+    public static final ResourceKey<Feature> GRASS_SNOWY = AWRFeatureUtils.of("grass_snowy");
+    public static final ResourceKey<Feature> GRASS_TUNDRA = AWRFeatureUtils.of("grass_tundra");
     
     //` -----------------------------------------------------------------------------------------------------------------
 
@@ -207,6 +214,68 @@ public class AWRVegetationFeatures {
                 .add(larch)
                 .add(larchFancy)
                 .add(fallenLarch)
+        ));
+        
+        context.register(GRASS_PRAIRIE, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_PRAIRIE_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_PRAIRIE_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+        context.register(GRASS_SNOWY, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_FROSTED_GRASS.defaultBlockState()
+                                        )
+                                )
+                        ),
+                        4
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_FROSTED_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+        context.register(GRASS_TUNDRA, weightedRandomSelector(b -> b
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.SHORT_TUNDRA_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+                .add(
+                        PlacementUtils.inlinePlaced(
+                                new SimpleBlockFeature(
+                                        BlockStateProvider.of(
+                                                AWRBlocks.TALL_TUNDRA_GRASS.defaultBlockState()
+                                        )
+                                )
+                        )
+                )
         ));
     }
     

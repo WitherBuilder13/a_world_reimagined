@@ -8,6 +8,8 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.Util;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -29,6 +31,10 @@ public class AWRVegetationPlacements {
     public static final ResourceKey<PlacedFeature> TREES_TAIGA = AWRPlacementUtils.of("trees_taiga");
     public static final ResourceKey<PlacedFeature> TREES_WOODED_TUNDRA = AWRPlacementUtils.of("trees_wooded_tundra");
     
+    public static final ResourceKey<PlacedFeature> PATCH_GRASS_PRAIRIE = AWRPlacementUtils.of("patch_grass_prairie");
+    public static final ResourceKey<PlacedFeature> PATCH_GRASS_SNOWY = AWRPlacementUtils.of("patch_grass_snowy");
+    public static final ResourceKey<PlacedFeature> PATCH_GRASS_TUNDRA = AWRPlacementUtils.of("patch_grass_tundra");
+    
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<Feature> configuredFeatureLookup = context.lookup(Registries.FEATURE);
 
@@ -45,6 +51,10 @@ public class AWRVegetationPlacements {
         Holder<Feature> treesSnowyTaiga = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.TREES_SNOWY_TAIGA);
         Holder<Feature> treesTaiga = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.TREES_TAIGA);
         Holder<Feature> treesWoodedTundra = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.TREES_WOODED_TUNDRA);
+        
+        Holder<Feature> grassPrairie = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.GRASS_PRAIRIE);
+        Holder<Feature> grassSnowy = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.GRASS_SNOWY);
+        Holder<Feature> grassTundra = configuredFeatureLookup.getOrThrow(AWRVegetationFeatures.GRASS_TUNDRA);
 
         PlacementUtils.register(context, TREES_ASPEN_GROVE, treesAspenGrove, treePlacement(10));
         PlacementUtils.register(context, TREES_FORESTED_SLOPES, treesForestedSlopes, treePlacement(10));
@@ -65,6 +75,36 @@ public class AWRVegetationPlacements {
         PlacementUtils.register(context, TREES_SNOWY_TAIGA, treesSnowyTaiga, treePlacement(15));
         PlacementUtils.register(context, TREES_TAIGA, treesTaiga, treePlacement(15));
         PlacementUtils.register(context, TREES_WOODED_TUNDRA, treesWoodedTundra, treePlacement(10));
+        
+        PlacementUtils.register(
+                context,
+                PATCH_GRASS_PRAIRIE,
+                grassPrairie,
+                Util.copyAndAdd(
+                        VegetationPlacements.worldSurfaceSquaredWithCount(20),
+                        CountPlacement.of(32),
+                        OffsetPlacement.ofTriangle(7, 3),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+        );
+        PlacementUtils.register(
+                context,
+                PATCH_GRASS_SNOWY,
+                grassSnowy,
+                Util.copyAndAdd(
+                        VegetationPlacements.worldSurfaceSquaredWithCount(20),
+                        //CountPlacement.of(32),
+                        OffsetPlacement.ofTriangle(7, 3),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+        );
+        PlacementUtils.register(
+                context,
+                PATCH_GRASS_TUNDRA,
+                grassTundra,
+                Util.copyAndAdd(
+                        VegetationPlacements.worldSurfaceSquaredWithCount(20),
+                        CountPlacement.of(12),
+                        OffsetPlacement.ofTriangle(7, 3),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)));
     }
     
     private static List<PlacementModifier> treePlacementRare(int chance) {

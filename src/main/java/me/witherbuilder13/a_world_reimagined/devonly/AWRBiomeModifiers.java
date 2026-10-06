@@ -18,6 +18,7 @@ public class AWRBiomeModifiers {
     public static final Identifier REPLACE_SNOWY_PLAINS_TREES = AWorldReimagined.id("replace_snowy_plains_trees");
     public static final Identifier REPLACE_SNOWY_TAIGA_TREES = AWorldReimagined.id("replace_snowy_taiga_trees");
     public static final Identifier REPLACE_TAIGA_TREES = AWorldReimagined.id("replace_taiga_trees");
+    public static final Identifier REPLACE_SNOWY_PLAINS_GRASS = AWorldReimagined.id("replace_snowy_plains_grass");
 
     public static void init() {
         BiomeModification groveTrees = BiomeModifications.create(REPLACE_GROVE_TREES);
@@ -26,6 +27,7 @@ public class AWRBiomeModifiers {
         BiomeModification snowyPlainsTrees = BiomeModifications.create(REPLACE_SNOWY_PLAINS_TREES);
         BiomeModification snowyTaigaTrees = BiomeModifications.create(REPLACE_SNOWY_TAIGA_TREES);
         BiomeModification taigaTrees = BiomeModifications.create(REPLACE_TAIGA_TREES);
+        BiomeModification snowyPlainsGrass = BiomeModifications.create(REPLACE_SNOWY_PLAINS_GRASS);
 
 
         groveTrees.add(
@@ -104,6 +106,19 @@ public class AWRBiomeModifiers {
                 BiomeSelectors.includeByKey(Biomes.TAIGA),
                 context ->
                         context.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.TREES_TAIGA)
+        );
+        
+        snowyPlainsGrass.add(
+                ModificationPhase.REPLACEMENTS,
+                BiomeSelectors.includeByKey(Biomes.SNOWY_PLAINS),
+                context ->
+                        context.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN)
+        );
+        snowyPlainsGrass.add(
+                ModificationPhase.REPLACEMENTS,
+                BiomeSelectors.includeByKey(Biomes.SNOWY_PLAINS),
+                context ->
+                        context.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AWRVegetationPlacements.PATCH_GRASS_SNOWY)
         );
     }
 }

@@ -1,13 +1,9 @@
 package me.witherbuilder13.a_world_reimagined.datagen;
 
-import dev.worldgen.lithostitched.api.registry.LithostitchedRegistries;
 import me.witherbuilder13.a_world_reimagined.datagen.tag.AWRBiomeTagProvider;
 import me.witherbuilder13.a_world_reimagined.datagen.tag.AWRBlockTagProvider;
 import me.witherbuilder13.a_world_reimagined.datagen.tag.AWREntityTypeTagProvider;
 import me.witherbuilder13.a_world_reimagined.datagen.tag.AWRItemTagProvider;
-import me.witherbuilder13.a_world_reimagined.lithostitched.AWRBiomeInjectors;
-import me.witherbuilder13.a_world_reimagined.lithostitched.AWRFeatureModifiers;
-import me.witherbuilder13.a_world_reimagined.lithostitched.AWRSurfaceRuleModifiers;
 import me.witherbuilder13.a_world_reimagined.world.biome.AWRBiomeData;
 import me.witherbuilder13.a_world_reimagined.world.feature.AWRFeatureUtils;
 import me.witherbuilder13.a_world_reimagined.world.gen.AWRMaterialRules;
@@ -43,8 +39,5 @@ public class AWRDataGenerator implements DataGeneratorEntrypoint {
 		builder.add(Registries.FEATURE, AWRFeatureUtils::bootstrap);
 		builder.add(Registries.PLACED_FEATURE, AWRPlacementUtils::bootstrap);
 		builder.add(Registries.MATERIAL_RULE, AWRMaterialRules::bootstrap);
-		builder.add(LithostitchedRegistries.BIOME_INJECTOR, AWRBiomeInjectors::bootstrap);
-		builder.add(LithostitchedRegistries.WORLDGEN_MODIFIER, AWRFeatureModifiers::bootstrap);
-		builder.add(LithostitchedRegistries.WORLDGEN_MODIFIER, AWRSurfaceRuleModifiers::bootstrap);
 	}
 }

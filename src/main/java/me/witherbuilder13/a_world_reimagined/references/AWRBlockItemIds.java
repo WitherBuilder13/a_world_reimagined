@@ -196,6 +196,8 @@ public class AWRBlockItemIds {
     public static final BlockItemId PEAT_BLOCK = create("peat_block");
     public static final BlockItemId QUICKSAND = create("quicksand", "quicksand_bucket");
     public static final BlockItemId CATTAIL = create("cattail");
+    public static final BlockItemId SHORT_PRAIRIE_GRASS = create("short_prairie_grass");
+    public static final BlockItemId TALL_PRAIRIE_GRASS = create("tall_prairie_grass");
 
     //` ---------------------------------------------------------------------------------------------------------------------------------------
 

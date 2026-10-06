@@ -602,7 +602,7 @@ public class AWRBlocks {
             AWRBlockItemIds.REDWOOD_LEAVES, p -> new LeavesBlock(AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), leavesProperties(SoundType.GRASS)
     );
     public static final Block REDWOOD_SAPLING = register(
-            AWRBlockItemIds.REDWOOD_SAPLING, p -> new GiantSaplingBlock(AWRTreeGrowers.REDWOOD, p), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SAPLING)
+            AWRBlockItemIds.REDWOOD_SAPLING, p -> new GiantSaplingBlock(AWRTreeGrowers.REDWOOD, p), BlockBehaviour.Properties.ofFullCopy(SPRUCE_SAPLING)
     );
     public static final Block POTTED_REDWOOD_SAPLING = register(
             AWRBlockIds.POTTED_REDWOOD_SAPLING, p -> new FlowerPotBlock(REDWOOD_SAPLING, p), flowerPotProperties()
@@ -685,7 +685,7 @@ public class AWRBlocks {
             AWRBlockItemIds.SEQUOIA_LEAVES, p -> new LeavesBlock(AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), leavesProperties(SoundType.GRASS)
     );
     public static final Block SEQUOIA_SAPLING = register(
-            AWRBlockItemIds.SEQUOIA_SAPLING, p -> new GiantSaplingBlock(AWRTreeGrowers.SEQUOIA, p), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SAPLING)
+            AWRBlockItemIds.SEQUOIA_SAPLING, p -> new GiantSaplingBlock(AWRTreeGrowers.SEQUOIA, p), BlockBehaviour.Properties.ofFullCopy(SPRUCE_SAPLING)
     );
     public static final Block POTTED_SEQUOIA_SAPLING = register(
             AWRBlockIds.POTTED_SEQUOIA_SAPLING, p -> new FlowerPotBlock(SEQUOIA_SAPLING, p), flowerPotProperties()
@@ -693,73 +693,79 @@ public class AWRBlocks {
     
 
     public static final Block WHITE_SAND = register(
-            AWRBlockItemIds.WHITE_SAND, p -> new SandBlock(new ColorRGBA(16383998), p), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)
+            AWRBlockItemIds.WHITE_SAND, p -> new SandBlock(new ColorRGBA(16383998), p), BlockBehaviour.Properties.ofFullCopy(SAND)
     );
     public static final Block WHITE_SANDSTONE = register(
-            AWRBlockItemIds.WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)
+            AWRBlockItemIds.WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(SANDSTONE)
     );
     public static final Block WHITE_SANDSTONE_SLAB = registerSlab(AWRBlockItemIds.WHITE_SANDSTONE_SLAB, WHITE_SANDSTONE);
     public static final Block WHITE_SANDSTONE_STAIRS = registerStair(AWRBlockItemIds.WHITE_SANDSTONE_STAIRS, WHITE_SANDSTONE);
     public static final Block WHITE_SANDSTONE_WALL = registerWall(AWRBlockItemIds.WHITE_SANDSTONE_WALL, WHITE_SANDSTONE);
     public static final Block CUT_WHITE_SANDSTONE = register(
-            AWRBlockItemIds.CUT_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_SANDSTONE)
+            AWRBlockItemIds.CUT_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(CUT_SANDSTONE)
     );
     public static final Block CUT_WHITE_SANDSTONE_SLAB = registerSlab(AWRBlockItemIds.CUT_WHITE_SANDSTONE_SLAB, CUT_WHITE_SANDSTONE);
     public static final Block SMOOTH_WHITE_SANDSTONE = register(
-            AWRBlockItemIds.SMOOTH_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.SMOOTH_SANDSTONE)
+            AWRBlockItemIds.SMOOTH_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(SMOOTH_SANDSTONE)
     );
     public static final Block SMOOTH_WHITE_SANDSTONE_SLAB = registerSlab(AWRBlockItemIds.SMOOTH_WHITE_SANDSTONE_SLAB, SMOOTH_WHITE_SANDSTONE);
     public static final Block SMOOTH_WHITE_SANDSTONE_STAIRS = registerStair(AWRBlockItemIds.SMOOTH_WHITE_SANDSTONE_STAIRS, SMOOTH_WHITE_SANDSTONE);
     public static final Block CHISELED_WHITE_SANDSTONE = register(
-            AWRBlockItemIds.CHISELED_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_SANDSTONE)
+            AWRBlockItemIds.CHISELED_WHITE_SANDSTONE, BlockBehaviour.Properties.ofFullCopy(CHISELED_SANDSTONE)
     );
     
     public static final Block SNOW_BRICKS = register(
-            AWRBlockItemIds.SNOW_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).destroyTime(0.3F)
+            AWRBlockItemIds.SNOW_BRICKS, BlockBehaviour.Properties.ofFullCopy(SNOW_BLOCK).destroyTime(0.3F)
     );
     public static final Block SNOW_BRICK_STAIRS = registerStair(AWRBlockItemIds.SNOW_BRICK_STAIRS, SNOW_BRICKS);
     public static final Block SNOW_BRICK_SLAB = registerSlab(AWRBlockItemIds.SNOW_BRICK_SLAB, SNOW_BRICKS);
     public static final Block SNOW_BRICK_WALL = registerWall(AWRBlockItemIds.SNOW_BRICK_WALL, SNOW_BRICKS);
     
     public static final Block PACKED_ICE_BRICKS = register(
-            AWRBlockItemIds.PACKED_ICE_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_ICE).friction(0.8F).destroyTime(0.6F)
+            AWRBlockItemIds.PACKED_ICE_BRICKS, BlockBehaviour.Properties.ofFullCopy(PACKED_ICE).friction(0.8F).destroyTime(0.6F)
     );
     public static final Block PACKED_ICE_BRICK_STAIRS = registerStair(AWRBlockItemIds.PACKED_ICE_BRICK_STAIRS, PACKED_ICE_BRICKS);
     public static final Block PACKED_ICE_BRICK_SLAB = registerSlab(AWRBlockItemIds.PACKED_ICE_BRICK_SLAB, PACKED_ICE_BRICKS);
     public static final Block PACKED_ICE_BRICK_WALL = registerWall(AWRBlockItemIds.PACKED_ICE_BRICK_WALL, SNOW_BRICKS);
 
     public static final Block PERMAFROST = register(
-            AWRBlockItemIds.PERMAFROST, SnowyBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)
+            AWRBlockItemIds.PERMAFROST, SnowyBlock::new, BlockBehaviour.Properties.ofFullCopy(GRASS_BLOCK)
     );
     public static final Block SHORT_FROSTED_GRASS = register(
-            AWRBlockItemIds.SHORT_FROSTED_GRASS, ShortFrostedGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_DRY_GRASS)
+            AWRBlockItemIds.SHORT_FROSTED_GRASS, ShortFrostedGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(SHORT_DRY_GRASS)
     );
     public static final Block TALL_FROSTED_GRASS = register(
-            AWRBlockItemIds.TALL_FROSTED_GRASS, TallFrostedGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS)
+            AWRBlockItemIds.TALL_FROSTED_GRASS, TallFrostedGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(TALL_DRY_GRASS)
     );
     public static final Block SHORT_TUNDRA_GRASS = register(
-            AWRBlockItemIds.SHORT_TUNDRA_GRASS, ShortTundraGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_DRY_GRASS)
+            AWRBlockItemIds.SHORT_TUNDRA_GRASS, ShortTundraGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(SHORT_DRY_GRASS)
     );
     public static final Block TALL_TUNDRA_GRASS = register(
-            AWRBlockItemIds.TALL_TUNDRA_GRASS, TallTundraGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS)
+            AWRBlockItemIds.TALL_TUNDRA_GRASS, TallTundraGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(TALL_DRY_GRASS)
     );
     public static final Block PINECONES = register(
-            AWRBlockItemIds.PINECONES, LeafLitterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LEAF_LITTER)
+            AWRBlockItemIds.PINECONES, LeafLitterBlock::new, BlockBehaviour.Properties.ofFullCopy(LEAF_LITTER)
     );
     public static final Block PEAT = register(
-            AWRBlockItemIds.PEAT, PeatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.WART_BLOCK)
+            AWRBlockItemIds.PEAT, PeatBlock::new, BlockBehaviour.Properties.ofFullCopy(GRASS_BLOCK).sound(SoundType.WART_BLOCK)
     );
     public static final Block PEAT_BLOCK = register(
-            AWRBlockItemIds.PEAT_BLOCK, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.WART_BLOCK)
+            AWRBlockItemIds.PEAT_BLOCK, Block::new, BlockBehaviour.Properties.ofFullCopy(GRASS_BLOCK).sound(SoundType.WART_BLOCK)
     );
     public static final Block QUICKSAND = register(
-            AWRBlockItemIds.QUICKSAND, QuicksandBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWDER_SNOW)
+            AWRBlockItemIds.QUICKSAND, QuicksandBlock::new, BlockBehaviour.Properties.ofFullCopy(POWDER_SNOW)
     );
     public static final Block QUICKSAND_CAULDRON = register(
-            AWRBlockIds.QUICKSAND_CAULDRON, QuicksandCauldronBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)
+            AWRBlockIds.QUICKSAND_CAULDRON, QuicksandCauldronBlock::new, BlockBehaviour.Properties.ofFullCopy(CAULDRON)
     );
     public static final Block CATTAIL = register(
             AWRBlockItemIds.CATTAIL, CattailBlock::new, BlockBehaviour.Properties.ofFullCopy(TALL_SEAGRASS)
+    );
+    public static final Block SHORT_PRAIRIE_GRASS = register(
+            AWRBlockItemIds.SHORT_PRAIRIE_GRASS, DoublePlantBlock::new, BlockBehaviour.Properties.ofFullCopy(TALL_GRASS)
+    );
+    public static final Block TALL_PRAIRIE_GRASS = register(
+            AWRBlockItemIds.TALL_PRAIRIE_GRASS, DoublePlantBlock::new, BlockBehaviour.Properties.ofFullCopy(TALL_GRASS)
     );
 
     //` ---------------------------------------------------------------------------------------------------------------------------------------

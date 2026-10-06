@@ -1,8 +1,11 @@
 {
   "attributes": {
     "minecraft:gameplay/natural_mob_spawns": {
-      "spawn_costs": {},
-      "spawns_by_category": {}
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {}
+      },
+      "modifier": "overlay"
     },
     "minecraft:visual/sky_color": "#7fa1ff"
   },
@@ -70,6 +73,7 @@
       "minecraft:glow_lichen",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "a_world_reimagined:patch_grass_prairie",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",

@@ -1,6 +1,5 @@
 package me.witherbuilder13.a_world_reimagined.world.gen;
 
-import dev.worldgen.lithostitched.api.worldgen.modifier.WorldgenModifier;
 import me.witherbuilder13.a_world_reimagined.AWorldReimagined;
 import me.witherbuilder13.a_world_reimagined.block.AWRBlocks;
 import net.minecraft.core.HolderGetter;
@@ -12,32 +11,35 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
+import net.minecraft.world.level.levelgen.material.MaterialRules;
+import net.minecraft.world.level.levelgen.material.condition.MaterialCondition;
+import net.minecraft.world.level.levelgen.material.rule.MaterialRule;
 
-import static net.minecraft.world.level.levelgen.SurfaceRules.*;
+import static net.minecraft.world.level.levelgen.material.MaterialRules.*;
 
 public class AWRMaterialRules {
 	
-	public static final ResourceKey<RuleSource> GLACIAL_SHORE_SURFACE = createKey("biome_surface/glacial_shore");
-	public static final ResourceKey<RuleSource> TUNDRA_SURFACE = createKey("biome_surface/tundra");
-	public static final ResourceKey<RuleSource> WHITE_SAND_OR_SANDSTONE_IF_CEILING = createKey("white_sand_or_sandstone_if_ceiling");
+	public static final ResourceKey<MaterialRule> GLACIAL_SHORE_SURFACE = createKey("biome_surface/glacial_shore");
+	public static final ResourceKey<MaterialRule> TUNDRA_SURFACE = createKey("biome_surface/tundra");
+	public static final ResourceKey<MaterialRule> WHITE_SAND_OR_SANDSTONE_IF_CEILING = createKey("white_sand_or_sandstone_if_ceiling");
 	
-	public static final RuleSource BLUE_ICE = makeStateRule(Blocks.BLUE_ICE);
-	public static final RuleSource PACKED_ICE = makeStateRule(Blocks.PACKED_ICE);
-	public static final RuleSource PERMAFROST = makeStateRule(AWRBlocks.PERMAFROST);
-	public static final RuleSource WHITE_SAND = makeStateRule(AWRBlocks.WHITE_SAND);
-	public static final RuleSource WHITE_SANDSTONE = makeStateRule(AWRBlocks.WHITE_SANDSTONE);
+	public static final MaterialRule BLUE_ICE = makeStateRule(Blocks.BLUE_ICE);
+	public static final MaterialRule PACKED_ICE = makeStateRule(Blocks.PACKED_ICE);
+	public static final MaterialRule PERMAFROST = makeStateRule(AWRBlocks.PERMAFROST);
+	public static final MaterialRule WHITE_SAND = makeStateRule(AWRBlocks.WHITE_SAND);
+	public static final MaterialRule WHITE_SANDSTONE = makeStateRule(AWRBlocks.WHITE_SANDSTONE);
 	
-	private static ResourceKey<RuleSource> createKey(final String name) {
+	private static ResourceKey<MaterialRule> createKey(final String name) {
 		return ResourceKey.create(Registries.MATERIAL_RULE, AWorldReimagined.id(name));
 	}
 	
-	public static RuleSource makeStateRule(final Block block) {
+	public static MaterialRule makeStateRule(final Block block) {
 		return state(block.defaultBlockState());
 	}
 	
-	public static void bootstrap(BootstrapContext<RuleSource> context) {
-		HolderGetter<ConditionSource> conditions = context.lookup(Registries.MATERIAL_CONDITION);
-		ConditionSource onCeiling = getCondition(conditions, VanillaMaterialConditions.ON_CEILING);
+	public static void bootstrap(BootstrapContext<MaterialRule> context) {
+		HolderGetter<MaterialCondition> conditions = context.lookup(Registries.MATERIAL_CONDITION);
+		MaterialCondition onCeiling = getCondition(conditions, VanillaMaterialConditions.ON_CEILING);
 		
 		registerAndWrap(
 				context,
@@ -53,10 +55,10 @@ public class AWRMaterialRules {
 		registerAndWrap(context, TUNDRA_SURFACE, PERMAFROST);
 		registerAndWrap(context, WHITE_SAND_OR_SANDSTONE_IF_CEILING, sequence(ifTrue(onCeiling, WHITE_SANDSTONE), WHITE_SAND));
 	}
-	
+	/*//
 	@SafeVarargs
-	public static RuleSource biomeSurface(BootstrapContext<WorldgenModifier> context, RuleSource rule, ResourceKey<Biome>... biomes) {
-		HolderGetter<ConditionSource> conditions = context.lookup(Registries.MATERIAL_CONDITION);
+	public static MaterialRule biomeSurface(BootstrapContext<WorldgenModifier> context, MaterialRule rule, ResourceKey<Biome>... biomes) {
+		HolderGetter<MaterialCondition> conditions = context.lookup(Registries.MATERIAL_CONDITION);
 		HolderGetter<Biome> biomesLookup = context.lookup(Registries.BIOME);
 		
 		return ifTrue(
@@ -75,8 +77,8 @@ public class AWRMaterialRules {
 	}
 	
 	@SafeVarargs
-	public static RuleSource underBiomeSurface(BootstrapContext<WorldgenModifier> context, RuleSource rule, ResourceKey<Biome>... biomes) {
-		HolderGetter<ConditionSource> conditions = context.lookup(Registries.MATERIAL_CONDITION);
+	public static MaterialRule underBiomeSurface(BootstrapContext<WorldgenModifier> context, MaterialRule rule, ResourceKey<Biome>... biomes) {
+		HolderGetter<MaterialCondition> conditions = context.lookup(Registries.MATERIAL_CONDITION);
 		HolderGetter<Biome> biomesLookup = context.lookup(Registries.BIOME);
 		
 		return ifTrue(
@@ -95,8 +97,8 @@ public class AWRMaterialRules {
 	}
 	
 	@SafeVarargs
-	public static RuleSource surface(BootstrapContext<WorldgenModifier> context, RuleSource rule, ResourceKey<Biome>... biomes) {
-		HolderGetter<ConditionSource> conditions = context.lookup(Registries.MATERIAL_CONDITION);
+	public static MaterialRule surface(BootstrapContext<WorldgenModifier> context, MaterialRule rule, ResourceKey<Biome>... biomes) {
+		HolderGetter<MaterialCondition> conditions = context.lookup(Registries.MATERIAL_CONDITION);
 		HolderGetter<Biome> biomesLookup = context.lookup(Registries.BIOME);
 		
 		return ifTrue(
@@ -113,4 +115,5 @@ public class AWRMaterialRules {
 				)
 		);
 	}
+	*/
 }

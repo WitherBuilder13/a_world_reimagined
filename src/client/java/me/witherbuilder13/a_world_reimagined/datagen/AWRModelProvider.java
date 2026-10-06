@@ -109,6 +109,8 @@ public class AWRModelProvider extends FabricModelProvider {
         blockModelGenerators.createDoublePlantWithDefaultItem(TALL_FROSTED_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
         blockModelGenerators.createCrossBlockWithDefaultItem(SHORT_TUNDRA_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
         blockModelGenerators.createCrossBlockWithDefaultItem(TALL_TUNDRA_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerators.createCrossBlockWithDefaultItem(SHORT_PRAIRIE_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerators.createDoublePlantWithDefaultItem(TALL_PRAIRIE_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
         
         blockModelGenerators.createRotatedVariantBlock(WHITE_SAND);
         
